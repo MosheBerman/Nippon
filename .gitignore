@@ -1,3 +1,5 @@
 *.zip
 *.psd
 *ipa
+/Ads/*
+/Ads
