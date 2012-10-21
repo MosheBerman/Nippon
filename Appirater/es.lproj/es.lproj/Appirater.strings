@@ -1,0 +1,6 @@
+ /* Appirater Spanish */
+kAppiraterMessageKey = "Si tú has disfrutado usar %@, ¿Podrías tomarte un momento para calificarlo?, ¡Muchas gracias por tu apoyo! \n\n";
+kAppiraterTitleKey = "Calificar %@";
+kAppiraterNoTextKey = "No, gracias";
+kAppiraterYesTextKey = "Si, calificar %@";
+kAppiraterReminderTextKey = "Recordármelo luego";

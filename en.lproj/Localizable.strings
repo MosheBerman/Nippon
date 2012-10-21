@@ -1,0 +1,174 @@
+/* 
+   Localizable.strings
+   Nippon
+
+   Created by Moshe Berman on 1/30/11.
+   Copyright 2011 MosheBerman.com. All rights reserved.
+   
+   English Translation By Moshe Berman
+   
+ */
+
+
+"Start New?" = "Start New?";
+
+"You have a game in progress. Starting a new game will cause the old game to be lost. Do you really want to start over?" = "You have a game in progress. Starting a new game will cause the old game to be lost. Do you really want to start over?";
+
+"No" = "No";
+
+"Yes" = "Yes";
+
+//An abbreviation for the word "version"
+"v" = "v";
+
+//Run away from the mob of fans
+"Run"= "Run";
+
+//Share your sushi with the fans or not?
+"Share" = "Share";
+
+"Okay, great!" = "Okay, great!";
+
+"Okay" = "Okay";
+
+"Okay..." = "Okay...";
+
+ /* ---------------- ---------------- ---------------- ---------------- ---------------- */
+
+"Warning:" = "Warning:";
+
+"You have no game to continue." = "You have no game to continue.";
+
+"Back to Menu" = "Back to Menu";
+
+"Information" = "Information";
+
+"Days Left" = "Days Left";
+
+"Cart" = "Cart";
+
+"cart" = "cart";
+
+"Cash" = "Cash";
+
+"Debt" = "Debt";
+
+"Savings" = "Savings";
+
+"Cancel" = "Cancel";
+
+"Game Center" = "Game Center";
+
+"High Scores" = "High Scores";
+
+"Achievements" = "Achievements";
+
+"Uh Oh!" = "Uh Oh!";
+
+"You are not signed in to Game Center. To see Leaderboards and Achievements you need to sign in." = "You are not signed in to Game Center. To see Leaderboards and Achievements you need to sign in.";
+
+"Congratulations! You earned" = "Congratulations! You earned";
+
+"Your score was posted to Game Center." = "Your score was posted to Game Center.";
+
+"Your score will be posted to Game Center when you log in." = "Your score will be posted to Game Center when you log in.";
+
+"Your business failed. You ended up owing" = "Your business failed. You ended up owing";
+
+"to the Credit Union." = "to the Credit Union.";
+
+"Main Menu" = "Main Menu";
+
+"Visit the Bank?" = "Visit the Bank?";
+
+"Do you want to visit the National Bank at Tokyo?" = "Do you want to visit the National Bank at Tokyo?";
+
+"Bank" = "Bank";
+
+"Visit the Credit Union?" = "Visit the Credit Union?";
+
+"Do you want to visit the Credit Union?" = "Do you want to visit the Credit Union?";
+
+"Credit Union" = "Credit Union";
+
+"A mob of fans is chasing you. Do you want to give out samples or try to escape?" = "A mob of fans is chasing you. Do you want to give out samples or try to escape?";
+
+"A mob of fans is chasing you. You have nothing to give them. It looks like you have to make a run for it." = "A mob of fans is chasing you. You have nothing to give them. It looks like you have to make a run for it.";
+
+"You found" = "You found";
+
+"but could only carry some of them." = "but could only carry some of them.";
+
+
+// Americans have flooded the market with cheap [ITEM]. Prices drop to insane lows!
+"Americans have flooded the market with cheap" = "Americans have flooded the market with cheap";
+
+"Prices drop to insane lows!" = "Prices drop to insane lows!";
+
+"Americans are buying up all of Nippon's" = "Americans are buying up all of Nippon's";
+
+"Prices are incredibly high!" = "Prices are incredibly high!";
+
+/* ------------------------------------------------------------ */
+
+"Mob!" = "Mob!";
+
+//
+//	Some titles for the in game event alerts
+//
+
+"Lost Money..." = "Lost Money...";
+
+"Prices Rise:" = "Prices Rise:";
+
+"Buy a Bigger Cart?" = "Buy a Bigger Cart?";
+
+"Funazushi!" = "Funazushi!";
+
+"Found Sushi!" = "Found Sushi!";
+
+"Prices Fall:" =  "Prices Fall:";
+
+"You have" = "You have";
+
+"Price" = "Price";
+
+"Oh no!" = "Oh no!";
+
+/* -------------------------------------------------------- */
+
+"You found some" = "You found some";
+
+"but you had no room for it..." = "but you had no room for it...";
+
+"Some of your Sushi started to smell funny. You threw it out." = "Some of your Sushi started to smell funny. You threw it out.";
+
+"You can't afford to buy that, sorry!" = "You can't afford to buy that, sorry!";
+
+"Whew..." = "Whew...";
+
+"Great!" = "Great!";
+
+"You lost the mob in the side streets." = "You lost the mob in the side streets.";
+
+"A mob of fans is chasing you. Do you want to give out samples or try to escape?" = "A mob of fans is chasing you. Do you want to give out samples or try to escape?";
+
+"The mob is still chasing you! Run!" = "The mob is still chasing you! Run!";
+
+"Not fast Enough!" = "Not fast Enough!";
+
+"Your fans caught up with you away and you had to drop money to distract them." = "Your fans caught up with you away and you had to drop money to distract them.";
+
+"You gave your most dedicated fans half of your sushi and they left you alone." ="You gave your most dedicated fans half of your sushi and they left you alone.";
+
+"It could have been worse." = "It could have been worse.";
+
+"About Nippon" = "About Nippon";
+
+"Confirm" = "Confirm";
+
+"Visit the Credit Union" = "Visit the Credit Union";
+
+"Visit the Bank" = "Visit the Bank";
+
+

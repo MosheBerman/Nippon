@@ -1,0 +1,6 @@
+/* Appirater Srpski */
+kAppiraterMessageKey = "Ako volite da koristite %@, da li biste odvojili trenutak da ga ocenite? Hvala na podršci! \n\n";
+kAppiraterTitleKey = "Oceni %@";
+kAppiraterNoTextKey = "Ne, hvala";
+kAppiraterYesTextKey = "Da, oceni %@";
+kAppiraterReminderTextKey = "Podseti me kasnije";

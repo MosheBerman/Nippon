@@ -1,0 +1,13 @@
+/* 
+   Appirater.strings
+   PleasantSkies
+
+   Created by Ian Lloyd on 10/01/11.
+   Copyright 2011 Caffeinated Adventures. All rights reserved.
+ */
+
+// Application rating strings
+"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!" = "If you enjoy playing %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!";
+"Rate %@" = "Rate %@";
+"No, Thanks" = "No, Thanks";
+"Remind me later" = "Remind me later";
