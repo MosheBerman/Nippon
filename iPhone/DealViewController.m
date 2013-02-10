@@ -305,7 +305,7 @@
     //
     
     if ([[kCart objectForKey:cell.textLabel.text]integerValue] > 0) {
-        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@ - %@: %li", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:[self.prices objectAtIndex:[indexPath row]]], NSLocalizedString(@"You have", @""), [[kCart objectForKey:cell.textLabel.text]integerValue]]];     
+        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@ - %@: %li", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:[self.prices objectAtIndex:[indexPath row]]], NSLocalizedString(@"You have", @""), (long)[[kCart objectForKey:cell.textLabel.text]integerValue]]];     
     }else{
         [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:[self.prices objectAtIndex:[indexPath row]]]]];
     }

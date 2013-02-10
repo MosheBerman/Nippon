@@ -94,7 +94,7 @@
 			//	The Sell button is selected
 			//
 			if([[kCart objectForKey:self.title]integerValue] > 0){
-				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You have %li %@.", [[kCart objectForKey:self.title]integerValue], self.title]];
+				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You have %li %@.", [[kCart objectForKey:self.title]longValue], self.title]];
 			}else {
 				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You do not have any %@.", self.title]];
 			}
@@ -470,7 +470,7 @@
             
             [formatter release];
 		}else {
-			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing", kYen, kDebt] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
+			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
 			[yenButton release];
 		}

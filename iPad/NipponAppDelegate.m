@@ -73,7 +73,7 @@
 	//
 	
 	if (kDevMode == nil) {
-		[kSettings setObject:[NSString stringWithString:@"NO"] forKey:@"devMode"];
+		[kSettings setObject:@"NO" forKey:@"devMode"];
 	}
     
     //
@@ -97,7 +97,7 @@
 	//	Create and show the main menu
 	//
 	
-	UIViewController *menuView = nil;
+	MainMenuViewController *menuView = nil;
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         menuView = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
@@ -651,7 +651,7 @@
     [formatter setAlwaysShowsDecimalSeparator:NO];
     [formatter setUsesGroupingSeparator:kFormatterEnabled];
     
-	NSString *message = [NSString stringWithFormat: @"%@: %@\n%@: %li/%@\n%@: ¥%@\n%@: ¥%@\n%@: ¥%@", NSLocalizedString(@"Days Left", @"how much time remains") ,kDaysLeft, NSLocalizedString(@"Cart", @"how many items the user has and how many they can carry at once"), numberOfItems, kMaxCart, NSLocalizedString(@"Cash", @"how much money the player has"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]], NSLocalizedString(@"Debt", @"how much the user owes the credit union"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]], NSLocalizedString(@"Savings", @"how much the user has saved up"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]];
+	NSString *message = [NSString stringWithFormat: @"%@: %@\n%@: %li/%@\n%@: ¥%@\n%@: ¥%@\n%@: ¥%@", NSLocalizedString(@"Days Left", @"how much time remains") ,kDaysLeft, NSLocalizedString(@"Cart", @"how many items the user has and how many they can carry at once"), (long)numberOfItems, kMaxCart, NSLocalizedString(@"Cash", @"how much money the player has"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]], NSLocalizedString(@"Debt", @"how much the user owes the credit union"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]], NSLocalizedString(@"Savings", @"how much the user has saved up"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]];
 	
     //Release the formatter
     [formatter release];

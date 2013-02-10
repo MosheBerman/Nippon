@@ -27,8 +27,6 @@
 
 @interface NipponAppDelegate : NSObject<UIApplicationDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
     
-    UIWindow *window;
-	UIViewController *mainMenu;
 	BOOL *gameInProgress;
 	
 	//
@@ -53,7 +51,7 @@
 
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) UIViewController *mainMenu;
+@property (nonatomic, retain) MainMenuViewController *mainMenu;
 
 @property (nonatomic, retain) NSMutableDictionary *tempAchievements;
 @property (nonatomic, retain) NSMutableArray *tempScores;

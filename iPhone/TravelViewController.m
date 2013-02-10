@@ -476,7 +476,7 @@
 //								[alert show];
 //								[alert release];
                                 
-                                [self presentBannerWithMessage:[NSString stringWithFormat:@"You found %li %@.", howManyWereFound, itemWhichYouFound]];
+                                [self presentBannerWithMessage:[NSString stringWithFormat:@"You found %li %@.", (long)howManyWereFound, itemWhichYouFound]];
 								
 							}else if ((numberOfItemsOnYou - howManyWereFound) < [kMaxCart integerValue]) {
 								

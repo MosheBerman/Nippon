@@ -222,7 +222,7 @@
 			
 		}else {
 			
-			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"No savings", kYen, kSavings] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
+			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"No savings"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
 			[yenButton release];
 		}
@@ -445,7 +445,7 @@
             [formatter release];
             
 		}else {
-			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing", kYen, kDebt] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
+			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
 			[yenButton release];
 		}
@@ -504,7 +504,7 @@
 				//	then set the amount box to that number
 				//
 				
-				self.amountBox.text = [NSString stringWithFormat:@"%i", [kCash longLongValue]/self.price];
+				self.amountBox.text = [NSString stringWithFormat:@"%lli", [kCash longLongValue]/self.price];
 				
 			}else if ([kCash longLongValue]/self.price < 1 && numberOfEmptySpaces < 1){
 				
@@ -547,7 +547,7 @@
 				//	The player has some
 				//
 				
-				self.amountBox.text = [NSString stringWithFormat:@"%i",[[kCart objectForKey:self.title] longLongValue]];
+				self.amountBox.text = [NSString stringWithFormat:@"%lli",[[kCart objectForKey:self.title] longLongValue]];
 			}else {
 				
 				//

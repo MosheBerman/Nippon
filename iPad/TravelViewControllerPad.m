@@ -501,7 +501,7 @@
 							//
 							
 							UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRandomEventFoundAFew
-																			message:[NSString stringWithFormat:@"%@ %li %@.", NSLocalizedString(@"You found", @""), howManyWereFound, itemWhichYouFound]
+																			message:[NSString stringWithFormat:@"%@ %li %@.", NSLocalizedString(@"You found", @""), (long)howManyWereFound, itemWhichYouFound]
 																		   delegate:self 
 																  cancelButtonTitle:NSLocalizedString(@"Okay, great!", @"")
 																  otherButtonTitles:nil];
@@ -543,7 +543,7 @@
 							}
 							
 							UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRandomEventFoundAFew
-																			message:[NSString stringWithFormat:@"%@ %li %@, %@", NSLocalizedString(@"You found", @""), howManyWereFound, itemWhichYouFound, NSLocalizedString(@"but could only carry some of them.", @"")]
+																			message:[NSString stringWithFormat:@"%@ %li %@, %@", NSLocalizedString(@"You found", @""), (long)howManyWereFound, itemWhichYouFound, NSLocalizedString(@"but could only carry some of them.", @"")]
 																		   delegate:self 
 																  cancelButtonTitle:NSLocalizedString(@"Okay, great!", @"")
 																  otherButtonTitles:nil];

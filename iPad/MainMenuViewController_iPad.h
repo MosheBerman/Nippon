@@ -10,19 +10,19 @@
 #import <GameKit/GameKit.h>
 #import <MessageUI/MessageUI.h>
 
+#import "MainMenuViewController.h"
 
-@interface MainMenuViewController_iPad : UIViewController <GKLeaderboardViewControllerDelegate, GKAchievementViewControllerDelegate, MFMailComposeViewControllerDelegate>{
+
+@interface MainMenuViewController_iPad : MainMenuViewController <GKLeaderboardViewControllerDelegate, GKAchievementViewControllerDelegate, MFMailComposeViewControllerDelegate>{
 	
 	IBOutlet UIButton *newGameButton;
 	IBOutlet UIButton *continueGameButton;
 	IBOutlet UIButton *howToPlayButton;
 	IBOutlet UIButton *gameCenterButton;
-    IBOutlet UIButton *continueButton;
     
 	IBOutlet UIImageView *landscapeImage;
 	IBOutlet UIImageView *portraitImage;
 	
-	IBOutlet UILabel *versionLabel;
 	
 }
 @property (retain, nonatomic) IBOutlet UIView *buttonWrapperView;
