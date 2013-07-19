@@ -10,8 +10,8 @@
 
 @implementation UIViewController (UIViewController_BannerMessages)
 
-- (void) presentBannerWithMessage:(NSString *)message{
-    
+- (void)presentBannerWithMessage:(NSString *)message
+{
     [kNotificationCenter postNotificationName:kShowAlertNotification object:nil userInfo:[NSDictionary dictionaryWithObject:message forKey:@"message"]];
 }
 @end
