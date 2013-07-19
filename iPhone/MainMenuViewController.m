@@ -8,7 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "HighScoresViewController.h"
-
+#import "SpiffyKit.h"
 
 @implementation MainMenuViewController
 
@@ -16,8 +16,7 @@
 - (IBAction)checkForDevMode:(id)sender {
     
     //Uncomment the following line in public builds, to avoid gaming the leaderboards et al.
-    //return;
-    
+    return;
     
     //
     //  Increment the number of buttons being pressed
@@ -25,7 +24,7 @@
     
     devModeCount = devModeCount + 1;
     
-    //If the number of buttons being pressed is 
+    //If the number of buttons being pressed is
     //the number of buttons there are, then show dev mode
     
     if (devModeCount == 3) {
@@ -51,7 +50,7 @@
         [scoreChanger release];
         
         [self presentModalViewController:navController animated:YES];
-
+				
         [navController release];
         //NSLog(@"Secret button pressed. devMode count is at %i", devModeCount);
         
@@ -76,7 +75,7 @@
 - (IBAction)releaseDevMode:(id)sender {
     
     //
-    //  Decrement the dev mode counter 
+    //  Decrement the dev mode counter
     //  when a button is not up
     //
     
@@ -92,57 +91,59 @@
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+ if (self) {
+ // Custom initialization.
+ }
+ return self;
+ }
+ */
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	//
-	//	Set the version label
-	//
-	
-	[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+		
+		//
+		//	Set the version label
+		//
+		
+		[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
     
     //
     //  Initialize the dev mode coundter
     //
     
     devModeCount = 0;
-
+		
 }
 
-- (void) viewWillAppear:(BOOL)animated{
-	[super viewWillAppear:animated];
-	
-	//
-	//	Check if game center is available and label the appropriate button accordingly
-	//
-	
-	if(isGameCenterAvailable()){
+- (void) viewWillAppear:(BOOL)animated
+{
+		
+		[super viewWillAppear:animated];
 		
 		//
-		//	Game Center is available
+		//	Check if game center is available and label the appropriate button accordingly
 		//
 		
-		[highScoresButton setTitle:NSLocalizedString(@"Game Center", @"") forState:UIControlStateNormal];
-		
-	}else{
-		
-		//
-		//	Game Center is NOT available
-		//
-		
-		[highScoresButton setTitle:NSLocalizedString(@"High Scores", @"") forState:UIControlStateNormal];
-	}
+		if(isGameCenterAvailable()){
+				
+				//
+				//	Game Center is available
+				//
+				
+				[highScoresButton setTitle:NSLocalizedString(@"Game Center", @"") forState:UIControlStateNormal];
+				
+		}else{
+				
+				//
+				//	Game Center is NOT available
+				//
+				
+				[highScoresButton setTitle:NSLocalizedString(@"High Scores", @"") forState:UIControlStateNormal];
+		}
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -153,7 +154,7 @@
         [continueButton setEnabled:YES];
     }else{
         [continueButton setAlpha:0.5];
-        [continueButton setEnabled:NO];       
+        [continueButton setEnabled:NO];
     }
 }
 
@@ -162,7 +163,7 @@
 //
 
 - (IBAction) dispatchNewGameNotification{
-	[kNotificationCenter postNotificationName:kStartNewGameNotification object:nil];
+		[kNotificationCenter postNotificationName:kStartNewGameNotification object:nil];
 }
 
 //
@@ -170,7 +171,7 @@
 //
 
 - (IBAction) dispatchResumeGameNotification{
-	[kNotificationCenter postNotificationName:kResumeGameNotification object:nil];
+		[kNotificationCenter postNotificationName:kResumeGameNotification object:nil];
 }
 
 //
@@ -178,7 +179,7 @@
 //
 
 - (IBAction) dispatchShowInstructionsNotification{
-	[kNotificationCenter postNotificationName:kShowInstructionsNotification object:nil];
+		[kNotificationCenter postNotificationName:kShowInstructionsNotification object:nil];
 }
 
 //
@@ -207,64 +208,13 @@
 //
 
 - (IBAction) dispatchGameCenterNotification{
-	[kNotificationCenter postNotificationName:kShowGameCenterNotification object:nil];
+		[kNotificationCenter postNotificationName:kShowGameCenterNotification object:nil];
 }
 
 #pragma mark - Contact the dev
 
 - (IBAction)contactTheDev:(id)sender{
-
-    //
-    //  Check for mail setup
-    //
-
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error",@"Error")
-                                                        message:NSLocalizedString(@"Mail is not set up. You can set it up in the Mail app, or email the developer at yetanotheriphoneapp@gmail.com. Thanks!", @"mail error message")
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK",@"") 
-                                              otherButtonTitles: nil];
-        [alert show];
-        [alert release];
-        return;
-    }
-
-    //
-    //  Create the mail composer
-    //
-    
-        MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
-    
-    //
-    //  Configure the email
-    //
-    
-    [mailVC setToRecipients:[NSArray arrayWithObject:@"yetanotheriphoneapp@gmail.com"]];
-    
-    //
-    //  Build the mail
-    //
-    
-    NSString *iOSVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *device = [[UIDevice currentDevice]model];
-    
-    NSString *message = [NSString stringWithFormat:@"Hey Moshe,\nI'm playing Nippon v%@ on an %@ running iOS %@. I have some feedback for you: ", appversion, device, iOSVersion];
-    
-    [mailVC setMessageBody:message isHTML:NO];
-    [mailVC setSubject:@"Nippon Feedback"];
-    
-    mailVC.mailComposeDelegate = self;
-    
-    if([self respondsToSelector:@selector(presentViewController:animated:completion:)]){
-        [self presentViewController:mailVC animated:YES completion:^{}];
-    }else{
-        [self presentModalViewController:mailVC animated:YES];
-    }
-    
-    [mailVC release];
+		[[SpiffyController sharedController] presentInViewController:self fromRectWhereApplicable:((UIButton*)sender).frame];
 }
 
 //
@@ -276,7 +226,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Thanks",@"Thanks")
                                                         message:NSLocalizedString(@"Thanks for your feedback!", @"mail feedback message")
                                                        delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK",@"") 
+                                              cancelButtonTitle:NSLocalizedString(@"OK",@"")
                                               otherButtonTitles: nil];
         [alert show];
         [alert release];
@@ -299,7 +249,7 @@
 //
 
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController{
-	[self dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)achievementViewControllerDidFinish:(GKAchievementViewController *)viewController{
