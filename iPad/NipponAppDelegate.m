@@ -13,8 +13,7 @@
 @synthesize window, mainMenu, tempAchievements, tempScores, achievementsDictionary;
 
 
-#pragma mark -
-#pragma mark Application lifecycle
+#pragma mark - Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	
@@ -104,10 +103,11 @@
     }else{
         menuView = [[MainMenuViewController_iPad alloc] initWithNibName:@"MainMenuViewController_iPad" bundle:nil]; 
     }
+    
 	[self setMainMenu:menuView];
 	[menuView release];
 	
-	[self.window addSubview:menuView.view];
+	self.window.rootViewController = menuView;
     
 	//
 	//	Show the main Window
