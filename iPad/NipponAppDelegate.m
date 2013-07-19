@@ -8,10 +8,11 @@
 
 #import "NipponAppDelegate.h"
 
+#import "SpiffyKit.h"
+
 @implementation NipponAppDelegate
 
 @synthesize window, mainMenu, tempAchievements, tempScores, achievementsDictionary;
-
 
 #pragma mark - Application lifecycle
 
@@ -156,6 +157,13 @@
 	//
     
 	[Appirater applicationDidFinishLaunching:YES];
+    
+    //
+    //  Configure Spiffy
+    //
+    
+    [self configureSpiffy];
+    
 	
     return YES;
 }
@@ -1488,5 +1496,17 @@ BOOL isGameCenterAvailable(){
 	[super dealloc];
 }
 
+- (void)configureSpiffy
+{
+    [ setAppStoreIdentifier:@"415518235"];
+    [[SpiffyController sharedController] setAppURL:@"https://itunes.apple.com/us/app/nippon/id415518235?ls=1&mt=8"];
+    [[SpiffyController sharedController] setWebsiteURL:@"http://mosheberman.com"];
+    [[SpiffyController sharedController] setMoreAppsURL:@"http://appstore.com/mosheberman"];
+    
+    [[SpiffyController sharedController] setSupportEmailAddress:@"yetanotheriphoneapp@gmail.com"];
+    [[SpiffyController sharedController] setTwitterHandle:@"bermaniastudios"];
+    
+    [[SpiffyController sharedController] setAppColor:[UIColor darkGrayColor]];
+}
 
 @end
