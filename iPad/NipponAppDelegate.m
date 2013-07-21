@@ -17,8 +17,6 @@
 #pragma mark - Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
-    [TestFlight takeOff:@"63a5af04839edad9b62396c52cba1c73_NDQxNDIwMTEtMDgtMjQgMjE6NDI6NTkuNTk5OTEx"];
     
 	//
 	//	Initialize the "Game in progress" flag.

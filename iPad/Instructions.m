@@ -88,8 +88,6 @@
 	
 	[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
    	[self.navigationController.navigationBar setTranslucent:YES]; 
-    
-    [TestFlight passCheckpoint:@"Viewed Instructions."];
 }
 
 - (void)viewDidUnload{

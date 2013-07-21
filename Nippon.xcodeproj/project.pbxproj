@@ -19,6 +19,7 @@
 		461931F714C5CC9F001F72B7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461931F614C5CC9F001F72B7 /* MessageUI.framework */; };
 		461931FA14C5CF86001F72B7 /* NipponAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 461931F914C5CF86001F72B7 /* NipponAppDelegate.m */; };
 		461931FD14C5E3B1001F72B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461931FC14C5E3B1001F72B7 /* QuartzCore.framework */; };
+		461D8554179C30EB00DD509D /* libSpiffyKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 461D8553179C30EB00DD509D /* libSpiffyKit.a */; };
 		462A6C6816C78285003467A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 462A6C6716C78285003467A1 /* Default-568h@2x.png */; };
 		462ADC9013765ADB00487F04 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 462ADC8F13765ADB00487F04 /* pin.png */; };
 		4632366D130CA6640092FA16 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 46323654130CA6640092FA16 /* Appirater.m */; };
@@ -41,9 +42,7 @@
 		4642CB7F13315A7000019387 /* 4Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7813315A5F00019387 /* 4Pad.png */; };
 		4642CB8013315A7000019387 /* 5Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7913315A6700019387 /* 5Pad.png */; };
 		4642CB8113315A7000019387 /* 6Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7A13315A6A00019387 /* 6Pad.png */; };
-		4642F51B179983E500F2152B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F51A179983E500F2152B /* SenTestingKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4642F51D179983F100F2152B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F51C179983F100F2152B /* Social.framework */; };
-		4642F5281799975E00F2152B /* libSpiffyKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F5271799975E00F2152B /* libSpiffyKit.a */; };
 		464E6BEE13142E9300E71068 /* Merlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 464E6BED13142E9300E71068 /* Merlin.png */; };
 		4650779C12F368D700C92966 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650779B12F368D700C92966 /* HighScoresViewController.m */; };
 		46544C8F130C7F3E00FBB776 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46544C8E130C7F3E00FBB776 /* SystemConfiguration.framework */; };
@@ -66,7 +65,6 @@
 		46843FB9137201F900EA27C6 /* MessageBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46843FB7137201F900EA27C6 /* MessageBanner.xib */; };
 		4691811513086463000C17FD /* Menu-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 4691811313086463000C17FD /* Menu-Landscape.png */; };
 		4691811613086463000C17FD /* Menu-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4691811413086463000C17FD /* Menu-Portrait.png */; };
-		469C19D1146232AE00335BBD /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C19CF146232AD00335BBD /* libTestFlight.a */; };
 		46B5BE2E130B189100D86D5E /* TravelViewControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B5BE2C130B189100D86D5E /* TravelViewControllerPad.m */; };
 		46B5BE2F130B189100D86D5E /* TravelViewControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B5BE2D130B189100D86D5E /* TravelViewControllerPad.xib */; };
 		46B5BE33130B1E5700D86D5E /* Map-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B5BE31130B1E5700D86D5E /* Map-Landscape.png */; };
@@ -115,6 +113,9 @@
 		461931F814C5CF86001F72B7 /* NipponAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = NipponAppDelegate.h; path = iPad/NipponAppDelegate.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		461931F914C5CF86001F72B7 /* NipponAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; name = NipponAppDelegate.m; path = iPad/NipponAppDelegate.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		461931FC14C5E3B1001F72B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		461D8551179C30EB00DD509D /* SpiffyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyController.h; sourceTree = "<group>"; };
+		461D8552179C30EB00DD509D /* SpiffyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyKit.h; sourceTree = "<group>"; };
+		461D8553179C30EB00DD509D /* libSpiffyKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSpiffyKit.a; sourceTree = "<group>"; };
 		462A6C6716C78285003467A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "iPhone/Images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		462ADC8F13765ADB00487F04 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = images/TravelView/pin.png; sourceTree = "<group>"; };
 		46323653130CA6640092FA16 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Appirater/Appirater.h; sourceTree = "<group>"; };
@@ -141,12 +142,7 @@
 		4642CB7813315A5F00019387 /* 4Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4Pad.png; path = images/instructions/4Pad.png; sourceTree = "<group>"; };
 		4642CB7913315A6700019387 /* 5Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5Pad.png; path = images/instructions/5Pad.png; sourceTree = "<group>"; };
 		4642CB7A13315A6A00019387 /* 6Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6Pad.png; path = images/instructions/6Pad.png; sourceTree = "<group>"; };
-		4642F51A179983E500F2152B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4642F51C179983F100F2152B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		4642F5241799975E00F2152B /* SpiffyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyController.h; sourceTree = "<group>"; };
-		4642F5251799975E00F2152B /* SpiffyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyKit.h; sourceTree = "<group>"; };
-		4642F5261799975E00F2152B /* SpiffyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyViewController.h; sourceTree = "<group>"; };
-		4642F5271799975E00F2152B /* libSpiffyKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSpiffyKit.a; sourceTree = "<group>"; };
 		464E6BED13142E9300E71068 /* Merlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Merlin.png; path = images/TravelView/Merlin.png; sourceTree = "<group>"; };
 		4650779A12F368D700C92966 /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
 		4650779B12F368D700C92966 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
@@ -173,8 +169,6 @@
 		46843FB7137201F900EA27C6 /* MessageBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageBanner.xib; sourceTree = "<group>"; };
 		4691811313086463000C17FD /* Menu-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu-Landscape.png"; path = "images/Menu/Menu-Landscape.png"; sourceTree = "<group>"; };
 		4691811413086463000C17FD /* Menu-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu-Portrait.png"; path = "images/Menu/Menu-Portrait.png"; sourceTree = "<group>"; };
-		469C19CF146232AD00335BBD /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
-		469C19D0146232AE00335BBD /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = TestFlightSDK/TestFlight.h; sourceTree = "<group>"; };
 		46B5BE2B130B189100D86D5E /* TravelViewControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelViewControllerPad.h; sourceTree = "<group>"; };
 		46B5BE2C130B189100D86D5E /* TravelViewControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelViewControllerPad.m; sourceTree = "<group>"; };
 		46B5BE2D130B189100D86D5E /* TravelViewControllerPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelViewControllerPad.xib; sourceTree = "<group>"; };
@@ -220,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4642F51D179983F100F2152B /* Social.framework in Frameworks */,
-				4642F51B179983E500F2152B /* SenTestingKit.framework in Frameworks */,
 				461931FD14C5E3B1001F72B7 /* QuartzCore.framework in Frameworks */,
 				461931F714C5CC9F001F72B7 /* MessageUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -229,8 +222,7 @@
 				4674B5ED12E635C500562FF9 /* GameKit.framework in Frameworks */,
 				46544C8F130C7F3E00FBB776 /* SystemConfiguration.framework in Frameworks */,
 				46323762130F08290092FA16 /* CFNetwork.framework in Frameworks */,
-				469C19D1146232AE00335BBD /* libTestFlight.a in Frameworks */,
-				4642F5281799975E00F2152B /* libSpiffyKit.a in Frameworks */,
+				461D8554179C30EB00DD509D /* libSpiffyKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +316,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				469C19D2146232BA00335BBD /* TestFlight */,
 				4642F520179994BC00F2152B /* Images */,
 				46323677130CA66A0092FA16 /* Appirater */,
 				460C600412F62F3300164FF1 /* Localizable.strings */,
@@ -353,9 +344,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4642F5211799975E00F2152B /* spiffykit */,
+				461D854E179C30EB00DD509D /* spiffykit */,
 				4642F51C179983F100F2152B /* Social.framework */,
-				4642F51A179983E500F2152B /* SenTestingKit.framework */,
 				461931FC14C5E3B1001F72B7 /* QuartzCore.framework */,
 				461931F614C5CC9F001F72B7 /* MessageUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -366,6 +356,32 @@
 				46323761130F08290092FA16 /* CFNetwork.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		461D854E179C30EB00DD509D /* spiffykit */ = {
+			isa = PBXGroup;
+			children = (
+				461D854F179C30EB00DD509D /* include */,
+				461D8553179C30EB00DD509D /* libSpiffyKit.a */,
+			);
+			path = spiffykit;
+			sourceTree = "<group>";
+		};
+		461D854F179C30EB00DD509D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				461D8550179C30EB00DD509D /* SpiffyKit */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		461D8550179C30EB00DD509D /* SpiffyKit */ = {
+			isa = PBXGroup;
+			children = (
+				461D8551179C30EB00DD509D /* SpiffyController.h */,
+				461D8552179C30EB00DD509D /* SpiffyKit.h */,
+			);
+			path = SpiffyKit;
 			sourceTree = "<group>";
 		};
 		46323655130CA6640092FA16 /* da.lproj */ = {
@@ -467,33 +483,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		4642F5211799975E00F2152B /* spiffykit */ = {
-			isa = PBXGroup;
-			children = (
-				4642F5221799975E00F2152B /* include */,
-				4642F5271799975E00F2152B /* libSpiffyKit.a */,
-			);
-			path = spiffykit;
-			sourceTree = "<group>";
-		};
-		4642F5221799975E00F2152B /* include */ = {
-			isa = PBXGroup;
-			children = (
-				4642F5231799975E00F2152B /* SpiffyKit */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		4642F5231799975E00F2152B /* SpiffyKit */ = {
-			isa = PBXGroup;
-			children = (
-				4642F5241799975E00F2152B /* SpiffyController.h */,
-				4642F5251799975E00F2152B /* SpiffyKit.h */,
-				4642F5261799975E00F2152B /* SpiffyViewController.h */,
-			);
-			path = SpiffyKit;
-			sourceTree = "<group>";
-		};
 		469C19CE14621BED00335BBD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,15 +503,6 @@
 				46FB75BE1310C6B2007CA6E5 /* Key_Wide.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		469C19D2146232BA00335BBD /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				469C19CF146232AD00335BBD /* libTestFlight.a */,
-				469C19D0146232AE00335BBD /* TestFlight.h */,
-			);
-			name = TestFlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -797,10 +777,9 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -825,10 +804,9 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -892,10 +870,9 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -941,10 +918,9 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
