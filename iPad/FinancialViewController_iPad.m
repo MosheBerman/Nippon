@@ -92,8 +92,8 @@
 			//
 			//	The Sell button is selected
 			//
-			if([[kCart objectForKey:self.title]integerValue] > 0){
-				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You have %li %@.", [[kCart objectForKey:self.title]longValue], self.title]];
+			if([kCart[self.title]integerValue] > 0){
+				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You have %li %@.", [kCart[self.title]longValue], self.title]];
 			}else {
 				[self.amountBox setPlaceholder:[NSString stringWithFormat:@"You do not have any %@.", self.title]];
 			}
@@ -319,7 +319,7 @@
         //  Set the score
         //
         
-        [kSettings setValue:[NSNumber numberWithLongLong:[[self.amountBox text] longLongValue]]forKey:@"cash"];
+        [kSettings setValue:@([[self.amountBox text] longLongValue])forKey:@"cash"];
         
         //
         //  Synchronize the settings
@@ -570,13 +570,13 @@
 			//	Calculate how many the player has
 			//
 			
-			if ([[kCart objectForKey:self.title] integerValue] > 0) {
+			if ([kCart[self.title] integerValue] > 0) {
 				
 				//
 				//	The player has some
 				//
 				
-				self.amountBox.text = [NSString stringWithFormat:@"%i",[[kCart objectForKey:self.title] integerValue]];
+				self.amountBox.text = [NSString stringWithFormat:@"%i",[kCart[self.title] integerValue]];
 			}else {
 				
 				//
@@ -877,7 +877,7 @@
 			//	Deduct the cash
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kCash longLongValue] - ([amountBox.text longLongValue] * [self price])] forKey:@"cash"];
+			[kSettings setObject:@([kCash longLongValue] - ([amountBox.text longLongValue] * [self price])) forKey:@"cash"];
 			
 			
 			//
@@ -886,7 +886,7 @@
 			
 			NSMutableDictionary *tempCart = [kCart mutableCopy];
 			
-			[tempCart setObject:[NSNumber numberWithInteger:[[kCart objectForKey:self.title] integerValue] + [amountBox.text integerValue]] forKey:[self title]];
+			tempCart[[self title]] = @([kCart[self.title] integerValue] + [amountBox.text integerValue]);
 			
 			[kSettings setObject:[tempCart copy] forKey:@"cart"];
 			
@@ -895,7 +895,7 @@
 			//	Add the sale to the "number of items bought" count
 			//
 			
-			[kSettings setObject:[NSNumber numberWithInteger:[kNumberOfItemsBought integerValue] + [amountBox.text integerValue]] forKey:@"numberOfItemsBought"];
+			[kSettings setObject:@([kNumberOfItemsBought integerValue] + [amountBox.text integerValue]) forKey:@"numberOfItemsBought"];
 			
 			
 			//
@@ -1079,7 +1079,7 @@
 		//	to sell. If they do, perform the sale.
 		//
 		
-		if ([amountBox.text integerValue] <= [[kCart objectForKey:self.title] integerValue]) {
+		if ([amountBox.text integerValue] <= [kCart[self.title] integerValue]) {
 			
 			//
 			//	Perform the sale
@@ -1087,7 +1087,7 @@
 			
 			NSMutableDictionary *tempCart = [kCart mutableCopy];
 			
-			[tempCart setObject:[NSNumber numberWithInteger:[[kCart objectForKey:self.title] integerValue] - [amountBox.text integerValue]] forKey:self.title];
+			tempCart[self.title] = @([kCart[self.title] integerValue] - [amountBox.text integerValue]);
 			
 			[kSettings setObject:tempCart forKey:@"cart"];
 			
@@ -1096,7 +1096,7 @@
 			//	Add the cash to the player's wallet
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kCash longLongValue] + ([amountBox.text longLongValue] * [self price])] forKey:@"cash"];
+			[kSettings setObject:@([kCash longLongValue] + ([amountBox.text longLongValue] * [self price])) forKey:@"cash"];
 			
 			//
 			//	Apply the Inheritance achievement
@@ -1126,7 +1126,7 @@
 			//	Add the sale to the "number of items sold" count
 			//
 			
-			[kSettings setObject:[NSNumber numberWithInteger:[kNumberOfItemsSold integerValue] + [amountBox.text integerValue]] forKey:@"numberOfItemsSold"];
+			[kSettings setObject:@([kNumberOfItemsSold integerValue] + [amountBox.text integerValue]) forKey:@"numberOfItemsSold"];
 			
 			//
 			//	Write the changes to disk
@@ -1142,7 +1142,7 @@
 			
 		}else {
 			
-			if ([[kCart objectForKey:self.title] integerValue] > 0) {
+			if ([kCart[self.title] integerValue] > 0) {
 				
 				//
 				//	Inform the user that they don't have that many items to sell
@@ -1211,13 +1211,13 @@
 			//	Deduct the money from the savings
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kSavings longLongValue] - [self.amountBox.text longLongValue]] forKey:@"savings"];
+			[kSettings setObject:@([kSavings longLongValue] - [self.amountBox.text longLongValue]) forKey:@"savings"];
 			
 			//
 			//	Add the money to the cash
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kCash longLongValue] + [self.amountBox.text longLongValue]] forKey:@"cash"];
+			[kSettings setObject:@([kCash longLongValue] + [self.amountBox.text longLongValue]) forKey:@"cash"];
 			
 			//
 			//	Store the changes on disk
@@ -1287,13 +1287,13 @@
 			//	Deduct the amount of cash from the user's "wallet"
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kCash longLongValue] - [self.amountBox.text longLongValue]] forKey:@"cash"];
+			[kSettings setObject:@([kCash longLongValue] - [self.amountBox.text longLongValue]) forKey:@"cash"];
 			
 			//
 			//	Add the correct amount of cash to the bank account
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kSavings longLongValue] + [self.amountBox.text longLongValue]] forKey:@"savings"];
+			[kSettings setObject:@([kSavings longLongValue] + [self.amountBox.text longLongValue]) forKey:@"savings"];
 			
 			//
 			//	Write the changes to disk
@@ -1473,13 +1473,13 @@
 			//	Dencrease the amount of debt
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kDebt longLongValue] - [self.amountBox.text longLongValue]] forKey:@"debt"];
+			[kSettings setObject:@([kDebt longLongValue] - [self.amountBox.text longLongValue]) forKey:@"debt"];
 			
 			//
 			//	Remove the money from the player's cash
 			//
 			
-			[kSettings setObject:[NSNumber numberWithLongLong:[kCash longLongValue] - [self.amountBox.text longLongValue]] forKey:@"cash"];
+			[kSettings setObject:@([kCash longLongValue] - [self.amountBox.text longLongValue]) forKey:@"cash"];
 			
 			//
 			//	Store the changes on disk

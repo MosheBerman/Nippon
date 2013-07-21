@@ -91,7 +91,7 @@
         //  Show the financial view controller
         //
         
-        FinancialViewController_iPad *scoreChanger = [[FinancialViewController_iPad alloc] initWithMode:kModeDeveloper andItem:@"Test a Score" atPrice:[NSNumber numberWithInt:1]];
+        FinancialViewController_iPad *scoreChanger = [[FinancialViewController_iPad alloc] initWithMode:kModeDeveloper andItem:@"Test a Score" atPrice:@1];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scoreChanger];
         
         //
@@ -100,7 +100,6 @@
         
         [navController.navigationBar setOpaque:NO];
         [navController.navigationBar setTranslucent:YES];
-        [navController.navigationBar setTintColor:[UIColor blackColor]];
         
         //release the score changer
         
@@ -188,7 +187,7 @@
 		//	Deduct travel time
 		//
 		
-		[kSettings setObject:[NSNumber numberWithInt:[kDaysLeft intValue] - kTravelTime] forKey:@"daysLeft"];
+		[kSettings setObject:@([kDaysLeft intValue] - kTravelTime) forKey:@"daysLeft"];
 		
 		//
 		//	Set the time labels
@@ -219,14 +218,14 @@
 			//	Generate prices
 			//
 			
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceNagiriMax+kPriceNagiriMin)] forKey:@"priceOfNagiri"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceMakiMax+kPriceMakiMin)] forKey:@"priceOfMaki"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceOshiMax+kPriceOshiMin)] forKey:@"priceOfOshi"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceInariMax+kPriceInariMin)] forKey:@"priceOfInari"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceSashimiMax+kPriceSashimiMin)] forKey:@"priceOfSashimi"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceChirashiMax+kPriceChirashiMin)] forKey:@"priceOfChirashi"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceNareMax+kPriceNareMin)] forKey:@"priceOfNare"];
-			[kSettings setObject:[NSNumber numberWithInt:abs(arc4random()%kPriceSushizushiMax+kPriceSushizushiMin)] forKey:@"priceOfSushizushi"];
+			[kSettings setObject:@(abs(arc4random()%kPriceNagiriMax+kPriceNagiriMin)) forKey:@"priceOfNagiri"];
+			[kSettings setObject:@(abs(arc4random()%kPriceMakiMax+kPriceMakiMin)) forKey:@"priceOfMaki"];
+			[kSettings setObject:@(abs(arc4random()%kPriceOshiMax+kPriceOshiMin)) forKey:@"priceOfOshi"];
+			[kSettings setObject:@(abs(arc4random()%kPriceInariMax+kPriceInariMin)) forKey:@"priceOfInari"];
+			[kSettings setObject:@(abs(arc4random()%kPriceSashimiMax+kPriceSashimiMin)) forKey:@"priceOfSashimi"];
+			[kSettings setObject:@(abs(arc4random()%kPriceChirashiMax+kPriceChirashiMin)) forKey:@"priceOfChirashi"];
+			[kSettings setObject:@(abs(arc4random()%kPriceNareMax+kPriceNareMin)) forKey:@"priceOfNare"];
+			[kSettings setObject:@(abs(arc4random()%kPriceSushizushiMax+kPriceSushizushiMin)) forKey:@"priceOfSushizushi"];
 			
 			//
 			//	Generate bank and debt interest
@@ -290,19 +289,13 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:dealView];
 	
 	[navController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-	[navController.navigationBar setTintColor:[UIColor darkGrayColor]];
 	[navController.toolbar setTintColor:[UIColor darkGrayColor]];
 	[navController.toolbar setTranslucent:YES];
 	
 	//
 	//
 	//
-	
-	
-	//
-	//
-	//
-	
+
 	[navController setModalPresentationStyle:UIModalPresentationFormSheet];
 	
 	//
@@ -319,8 +312,8 @@
 
 - (void) generateRandomEvents{
 	
-	NSArray *arrayOfEvents = [[NSArray alloc] initWithObjects: kRandomEventSpoiled, kRandomEventBiggerCart, kRandomEventFoundAFew, kRandomEventPricesBottomOut, kRandomEventPricesSkyrocket, nil];
-	NSArray *arrayOfProbabilities = [[NSArray alloc] initWithObjects: [NSNumber numberWithFloat:kProbabilityOfSpoiled], [NSNumber numberWithFloat:kProbabilityOfBiggerCart], [NSNumber numberWithFloat:kProbabilityOfFoundAFew], [NSNumber numberWithFloat:kProbabilityOfPricesBottomOut], [NSNumber numberWithFloat:kProbabilityOfPricesSkyrocket], nil];
+	NSArray *arrayOfEvents = @[kRandomEventSpoiled, kRandomEventBiggerCart, kRandomEventFoundAFew, kRandomEventPricesBottomOut, kRandomEventPricesSkyrocket];
+	NSArray *arrayOfProbabilities = @[[NSNumber numberWithFloat:kProbabilityOfSpoiled], [NSNumber numberWithFloat:kProbabilityOfBiggerCart], [NSNumber numberWithFloat:kProbabilityOfFoundAFew], [NSNumber numberWithFloat:kProbabilityOfPricesBottomOut], [NSNumber numberWithFloat:kProbabilityOfPricesSkyrocket]];
 	
 	//
 	//	Check if the probability is less than the threshold of the event
@@ -408,13 +401,13 @@
 			
 			occurance = (arc4random()*arc4random())%100;
 			
-			if (occurance < [[arrayOfProbabilities objectAtIndex:i] integerValue]) {
+			if (occurance < [arrayOfProbabilities[i] integerValue]) {
 				
 				//
 				//	Depending on the event, handle it
 				//
 				
-				if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventBiggerCart]) {
+				if ([arrayOfEvents[i] isEqualToString:kRandomEventBiggerCart]) {
 					
 					//
 					//	Offer a bigger cart for a fee
@@ -428,13 +421,13 @@
 					[alert addButtonWithTitle:kButtonTitleYes];
 					[alert show];
 					
-				}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventFoundAFew]) {
+				}else if ([arrayOfEvents[i] isEqualToString:kRandomEventFoundAFew]) {
 					
 					//
 					//	Choose which item was found
 					//
 					
-					NSArray *items = [NSArray arrayWithObjects:kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi, nil];
+					NSArray *items = @[kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi];
 					
 					NSInteger itemIndex = floor((arc4random()*arc4random())%[items count])+1;
 					
@@ -444,7 +437,7 @@
 					
 					if (itemIndex < [items count]){
 						
-						NSString *itemWhichYouFound = [items objectAtIndex:itemIndex];
+						NSString *itemWhichYouFound = items[itemIndex];
 						
 						//
 						//	Check for an item invalidating the "allergic" achievement
@@ -480,9 +473,9 @@
 							
 							NSMutableDictionary *tempCart = [kCart mutableCopy];
 							
-							NSNumber *tempNumber = [tempCart objectForKey:itemWhichYouFound];
+							NSNumber *tempNumber = tempCart[itemWhichYouFound];
 							
-							[tempCart setObject:[NSNumber numberWithInteger:howManyWereFound+[tempNumber integerValue]] forKey:itemWhichYouFound];
+							tempCart[itemWhichYouFound] = @(howManyWereFound+[tempNumber integerValue]);
 							
 							[kSettings setObject:tempCart forKey:@"cart"];
 							
@@ -522,9 +515,9 @@
 									
 									NSMutableDictionary *tempCart = [kCart mutableCopy];
 									
-									NSNumber *tempNumber = [tempCart objectForKey:itemWhichYouFound];
+									NSNumber *tempNumber = tempCart[itemWhichYouFound];
 									
-									[tempCart setObject:[NSNumber numberWithInteger:1+[tempNumber integerValue]] forKey:itemWhichYouFound];
+									tempCart[itemWhichYouFound] = @(1+[tempNumber integerValue]);
 									
 									[kSettings setObject:tempCart forKey:@"cart"];
 									
@@ -561,40 +554,40 @@
 					
 					
 					
-				}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventPricesBottomOut]) {
+				}else if ([arrayOfEvents[i] isEqualToString:kRandomEventPricesBottomOut]) {
 					
 					//
 					//	Choose which item bottoms out
 					//
 					
-					NSArray *items = [NSArray arrayWithObjects:kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi, nil] ;
+					NSArray *items = @[kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi] ;
 					
                     NSInteger indexOfItem = floor((arc4random() *arc4random())%([items count]+1));
 					
 					if(indexOfItem < [items count]){
 						
-						NSString *itemWhichBottomsOut = [items objectAtIndex:indexOfItem];
+						NSString *itemWhichBottomsOut = items[indexOfItem];
 						
 						//
 						//	Apply the new lower price
 						//
 						
 						if ([itemWhichBottomsOut isEqualToString:kItemsNagiri]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfNagiri integerValue]/kBottomOutFactor)] forKey:@"priceOfNagiri"];
+							[kSettings setObject:@([kPriceOfNagiri integerValue]/kBottomOutFactor) forKey:@"priceOfNagiri"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsMaki]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfMaki integerValue]/kBottomOutFactor)] forKey:@"priceOfMaki"];
+							[kSettings setObject:@([kPriceOfMaki integerValue]/kBottomOutFactor) forKey:@"priceOfMaki"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsOshi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfOshi integerValue]/kBottomOutFactor)+2] forKey:@"priceOfOshi"];
+							[kSettings setObject:@(([kPriceOfOshi integerValue]/kBottomOutFactor)+2) forKey:@"priceOfOshi"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsInari]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfInari integerValue]/kBottomOutFactor)] forKey:@"priceOfInari"];
+							[kSettings setObject:@([kPriceOfInari integerValue]/kBottomOutFactor) forKey:@"priceOfInari"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsSashimi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfSashimi integerValue]/kBottomOutFactor)] forKey:@"priceOfSashimi"];
+							[kSettings setObject:@([kPriceOfSashimi integerValue]/kBottomOutFactor) forKey:@"priceOfSashimi"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsChirashi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfChirashi integerValue]/kBottomOutFactor)] forKey:@"priceOfChirashi"];
+							[kSettings setObject:@([kPriceOfChirashi integerValue]/kBottomOutFactor) forKey:@"priceOfChirashi"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsNare]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfNare integerValue]/kBottomOutFactor)] forKey:@"priceOfNare"];
+							[kSettings setObject:@([kPriceOfNare integerValue]/kBottomOutFactor) forKey:@"priceOfNare"];
 						}else if ([itemWhichBottomsOut isEqualToString:kItemsSushizushi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:([kPriceOfSushizushi integerValue]/kBottomOutFactor)] forKey:@"priceOfSushizushi"];
+							[kSettings setObject:@([kPriceOfSushizushi integerValue]/kBottomOutFactor) forKey:@"priceOfSushizushi"];
 						}
 						
 						//
@@ -613,40 +606,40 @@
 					}
 					
 					
-				}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventPricesSkyrocket]) {
+				}else if ([arrayOfEvents[i] isEqualToString:kRandomEventPricesSkyrocket]) {
 					
 					//
 					//	Prices skyrocket on a particular item.
 					//	First, choose which item
 					//
 					
-					NSArray *items = [NSArray arrayWithObjects:kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi, nil];
+					NSArray *items = @[kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi];
 					
 					NSInteger indexOfItem = floor((arc4random()*arc4random())%([items count]+1));
 					
 					if(indexOfItem < [items count]){
-						NSString *itemWhichSkyrockets = [items objectAtIndex:indexOfItem];
+						NSString *itemWhichSkyrockets = items[indexOfItem];
 						
 						//
 						//	Apply the new higher price
 						//
 						
 						if ([itemWhichSkyrockets isEqualToString:kItemsNagiri]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfNagiri integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfNagiri"];
+							[kSettings setObject:@([kPriceOfNagiri integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfNagiri"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsMaki]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfMaki integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfMaki"];
+							[kSettings setObject:@([kPriceOfMaki integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfMaki"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsOshi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfOshi integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfOshi"];
+							[kSettings setObject:@([kPriceOfOshi integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfOshi"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsInari]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfInari integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfInari"];
+							[kSettings setObject:@([kPriceOfInari integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfInari"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsSashimi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfSashimi integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfSashimi"];
+							[kSettings setObject:@([kPriceOfSashimi integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfSashimi"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsChirashi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfChirashi integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfChirashi"];
+							[kSettings setObject:@([kPriceOfChirashi integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfChirashi"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsNare]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfNare integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfNare"];
+							[kSettings setObject:@([kPriceOfNare integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfNare"];
 						}else if ([itemWhichSkyrockets isEqualToString:kItemsSushizushi]) {
-							[kSettings setObject:[NSNumber numberWithInteger:[kPriceOfSushizushi integerValue] * kSkyrocketPriceFactor] forKey:@"priceOfSushizushi"];
+							[kSettings setObject:@([kPriceOfSushizushi integerValue] * kSkyrocketPriceFactor) forKey:@"priceOfSushizushi"];
 						}
 						
 						//
@@ -662,7 +655,7 @@
 						
 					}
 					
-				}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventSpoiled]) {
+				}else if ([arrayOfEvents[i] isEqualToString:kRandomEventSpoiled]) {
 					
 					//
 					//	TODO: Merge this with Mob catching player
@@ -687,21 +680,21 @@
 						
 						//TODO: Speed this up
 						
-						NSMutableDictionary *tempCart = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInteger:([[kCart objectForKey:kItemsNagiri] integerValue]/3)*2], kItemsNagiri,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsMaki] integerValue]/3)*2], kItemsMaki,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsOshi] integerValue]/3)*2], kItemsOshi,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsInari] integerValue]/3)*2], kItemsInari,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsSashimi] integerValue]/3)*2], kItemsSashimi,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsChirashi] integerValue]/3)*2], kItemsChirashi, 
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsNare] integerValue]/3)*2], kItemsNare,
-														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsSushizushi] integerValue]/3)*2], kItemsSushizushi, nil];
+						NSMutableDictionary *tempCart = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@(([kCart[kItemsNagiri] integerValue]/3)*2), kItemsNagiri,
+														 @(([kCart[kItemsMaki] integerValue]/3)*2), kItemsMaki,
+														 @(([kCart[kItemsOshi] integerValue]/3)*2), kItemsOshi,
+														 @(([kCart[kItemsInari] integerValue]/3)*2), kItemsInari,
+														 @(([kCart[kItemsSashimi] integerValue]/3)*2), kItemsSashimi,
+														 @(([kCart[kItemsChirashi] integerValue]/3)*2), kItemsChirashi, 
+														 @(([kCart[kItemsNare] integerValue]/3)*2), kItemsNare,
+														 @(([kCart[kItemsSushizushi] integerValue]/3)*2), kItemsSushizushi, nil];
 						[kSettings setObject:tempCart forKey:@"cart"];
 						
 						//
 						//	Increment the "Funazushi" count
 						//
 						
-						[kSettings setObject:[NSNumber numberWithInteger:[kNumberOfTimesFunazushi integerValue]+1] forKey:@"numberOfTimesFunazushi"];
+						[kSettings setObject:@([kNumberOfTimesFunazushi integerValue]+1) forKey:@"numberOfTimesFunazushi"];
 						
 						//
 						//	Post a notification saying that Funazushi occurred
@@ -785,13 +778,13 @@
 				//	Increase the cart size
 				//
 				
-				[kSettings setObject:[NSNumber numberWithInteger:[kMaxCart integerValue]+([kMaxCart integerValue]/4)] forKey:@"maxCart"];
+				[kSettings setObject:@([kMaxCart integerValue]+([kMaxCart integerValue]/4)) forKey:@"maxCart"];
 				
 				//
 				//	Deduct the cash for the cart
 				//
 				
-				[kSettings setObject:[NSNumber numberWithInteger:[kCash integerValue]-500] forKey:@"cash"];
+				[kSettings setObject:@([kCash integerValue]-500) forKey:@"cash"];
 				
 				//
 				//	Write the changes to disk
@@ -946,7 +939,7 @@
 				//	Cut the players cash in half
 				//
 				
-				[kSettings setObject:[NSNumber numberWithInteger:[kCash integerValue]/2]forKey:@"cash"];
+				[kSettings setObject:@([kCash integerValue]/2)forKey:@"cash"];
 				
 				//
 				//	Write the changes to disk
@@ -991,14 +984,14 @@
 			//
 			
 			NSMutableDictionary *tempCart = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Nagiri"] integerValue]/2], @"Nagiri",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Maki"] integerValue]/2], @"Maki",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Oshi"] integerValue]/2], @"Oshi",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Inari"] integerValue]/2], @"Inari",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Sashimi"] integerValue]/2], @"Sashimi",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Chirashi"] integerValue]/2], @"Chirashi", 
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Nare"] integerValue]/2], @"Nare",
-											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Sushizushi"] integerValue]/2], @"Sushizushi", nil];
+											 @([kCart[@"Nagiri"] integerValue]/2), @"Nagiri",
+											 @([kCart[@"Maki"] integerValue]/2), @"Maki",
+											 @([kCart[@"Oshi"] integerValue]/2), @"Oshi",
+											 @([kCart[@"Inari"] integerValue]/2), @"Inari",
+											 @([kCart[@"Sashimi"] integerValue]/2), @"Sashimi",
+											 @([kCart[@"Chirashi"] integerValue]/2), @"Chirashi", 
+											 @([kCart[@"Nare"] integerValue]/2), @"Nare",
+											 @([kCart[@"Sushizushi"] integerValue]/2), @"Sushizushi", nil];
 			[kSettings setObject:tempCart forKey:@"cart"];
 			
 			//

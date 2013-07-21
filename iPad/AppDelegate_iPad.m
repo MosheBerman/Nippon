@@ -38,7 +38,7 @@
                 //		Retain the achievement object and try again later.
                 //
                 
-                [self.tempAchievements setObject:achievement forKey:achievement.identifier];
+                (self.tempAchievements)[achievement.identifier] = achievement;
                 
                 [kSettings setObject:self.tempAchievements forKey:@"tempAchievements"];
                 
@@ -63,34 +63,30 @@
                         return;
                     }
                     
-                    NSDictionary *achivementLookup = [NSDictionary  dictionaryWithObjectsAndKeys:
-                                                      @"Reminisce", kAchievementReminisce,
-                                                      @"Manifest Destiny", kAchievementManifestDestiny, 
-                                                      @"Well Rounded", kAchievementWellRounded,
-                                                      @"Master Chef", kAchievementMasterChef,
-                                                      @"Overstock", kAchievementOverstock,
-                                                      @"Shameful", kAchievementShameful,
-                                                      @"No Nori",
-                                                      kAchievementNoNori,                                        
-                                                      @"Day Trader",
-                                                      kAchievementDayTrader,
-                                                      @"Corner The Market",kAchievementCornerTheMarket,
-                                                      @"Funazushi",                                                       kAchievementFunazushi,
-                                                      @"Five-0",                                                       kAchievementFiveO,
-                                                      @"Allergic",                                                       kAchievementAllergic,
-                                                      @"Wealthy",                                                       kAchievementWealthy,
-                                                      @"In For One",                                                       kAchievementInForOne,
-                                                      @"Merlin's Beard",kAchievementMerlinsBeard,
-                                                      @"Inheritance", kAchievementInheritance,
-                                                      @"Reserved", kAchievementReserved,
-                                                      @"Zero",                                                       kAchievementZero,
-                                                      nil];
+                    NSDictionary *achivementLookup = @{kAchievementReminisce: @"Reminisce",
+                                                      kAchievementManifestDestiny: @"Manifest Destiny", 
+                                                      kAchievementWellRounded: @"Well Rounded",
+                                                      kAchievementMasterChef: @"Master Chef",
+                                                      kAchievementOverstock: @"Overstock",
+                                                      kAchievementShameful: @"Shameful",
+                                                      kAchievementNoNori: @"No Nori",                                        
+                                                      kAchievementDayTrader: @"Day Trader",
+                                                      kAchievementCornerTheMarket: @"Corner The Market",
+                                                      kAchievementFunazushi: @"Funazushi",
+                                                      kAchievementFiveO: @"Five-0",
+                                                      kAchievementAllergic: @"Allergic",
+                                                      kAchievementWealthy: @"Wealthy",
+                                                      kAchievementInForOne: @"In For One",
+                                                      kAchievementMerlinsBeard: @"Merlin's Beard",
+                                                      kAchievementInheritance: @"Inheritance",
+                                                      kAchievementReserved: @"Reserved",
+                                                      kAchievementZero: @"Zero"};
 
                     //
                     // Create the alert banner
                     //
                     
-                    MessageBanner *alert = [[MessageBanner alloc] initWithMessage:[NSString stringWithFormat:@"%@", [achivementLookup objectForKey:[achievement identifier]]]];
+                    MessageBanner *alert = [[MessageBanner alloc] initWithMessage:[NSString stringWithFormat:@"%@", achivementLookup[[achievement identifier]]]];
                     
                     //
                     //  Position the frame

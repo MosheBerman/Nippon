@@ -35,7 +35,7 @@
         //  Show the financial view controller
         //
         
-        FinancialViewController *scoreChanger = [[FinancialViewController alloc] initWithMode:kModeDeveloper andItem:@"Test a Score" atPrice:[NSNumber numberWithInt:1]];
+        FinancialViewController *scoreChanger = [[FinancialViewController alloc] initWithMode:kModeDeveloper andItem:@"Test a Score" atPrice:@1];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scoreChanger];
         
         //
@@ -44,7 +44,6 @@
         
         [navController.navigationBar setOpaque:NO];
         [navController.navigationBar setTranslucent:YES];
-        [navController.navigationBar setTintColor:[UIColor blackColor]];
         
         //release the score changer
         
@@ -107,7 +106,7 @@
 		//	Set the version label
 		//
 		
-		[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+		[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]]];
     
     //
     //  Initialize the dev mode coundter

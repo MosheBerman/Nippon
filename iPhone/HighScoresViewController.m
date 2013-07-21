@@ -29,7 +29,7 @@
 				//	Sort the scores
 				//
 				
-				NSArray *descriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]];
+				NSArray *descriptors = @[[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]];
 				
 				if (kTempScores != nil && [kTempScores count] > 1){
 						self.highScores = [kTempScores sortedArrayUsingDescriptors:descriptors];
@@ -61,11 +61,6 @@
 		
 		self.title = @"High Scores";
 		
-		//
-		//	Tint the Navigation Bar
-		//
-		
-		[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
 }
 
 
@@ -150,7 +145,7 @@
 				
 				if ([indexPath row] < [highScores count]) {
 						
-						[cell.textLabel setText:[NSString stringWithFormat:@"%@%i",kYen, [[highScores objectAtIndex:[indexPath row]]integerValue]]];
+						[cell.textLabel setText:[NSString stringWithFormat:@"%@%i",kYen, [highScores[[indexPath row]]integerValue]]];
 				}
 				
 		}else {

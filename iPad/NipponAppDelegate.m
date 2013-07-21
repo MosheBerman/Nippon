@@ -33,7 +33,7 @@
 	//
 	
 	if (kNumberOfGamesPlayed == nil) {
-		[kSettings setObject:[NSNumber numberWithInteger:0] forKey:@"numberOfGamesPlayed"];
+		[kSettings setObject:@0 forKey:@"numberOfGamesPlayed"];
 	}
 	
 	//
@@ -41,7 +41,7 @@
 	//
 	
 	if (kNumberOfItemsBought == nil) {
-		[kSettings setObject:[NSNumber numberWithInteger:0] forKey:@"numberOfItemsBought"];
+		[kSettings setObject:@0 forKey:@"numberOfItemsBought"];
 	}
 	
 	//
@@ -49,7 +49,7 @@
 	//
 	
 	if (kNumberOfItemsSold == nil) {
-		[kSettings setObject:[NSNumber numberWithInteger:0] forKey:@"numberOfItemsSold"];
+		[kSettings setObject:@0 forKey:@"numberOfItemsSold"];
 	}
 	
 	//
@@ -57,7 +57,7 @@
 	//
     
 	if (kNumberOfTimesFunazushi == nil) {
-		[kSettings setObject:[NSNumber numberWithInteger:0] forKey:@"numberOfTimesFunazushi"];		
+		[kSettings setObject:@0 forKey:@"numberOfTimesFunazushi"];		
 	}
 	
 	//
@@ -108,6 +108,10 @@
 	[self setMainMenu:menuView];
 	
 	self.window.rootViewController = menuView;
+    
+    self.window.backgroundColor = [UIColor colorWithRed:0.81 green:0.16 blue:0.14 alpha:1.00];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.81 green:0.16 blue:0.14 alpha:1.00]];
     
 	//
 	//	Show the main Window
@@ -262,7 +266,7 @@
 	//	The number of days left:
 	//
 	
-	[kSettings setObject:[NSNumber numberWithInt:kInitialDaysLeft] forKey:@"daysLeft"];
+	[kSettings setObject:@kInitialDaysLeft forKey:@"daysLeft"];
 	
     //
     //  Reset the double length game
@@ -274,7 +278,7 @@
 	//	The number of items your "cart" can hold:
 	//
 	
-	[kSettings setObject:[NSNumber numberWithInt:kInitialCart] forKey:@"maxCart"];
+	[kSettings setObject:@kInitialCart forKey:@"maxCart"];
 	
 	//
 	//	How much cash you start with:
@@ -311,14 +315,14 @@
 	//
 	
 	NSMutableDictionary *tempCart = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-									 [NSNumber numberWithInteger:0], kItemsNagiri,
-									 [NSNumber numberWithInteger:0], kItemsMaki,
-									 [NSNumber numberWithInteger:0], kItemsOshi,
-									 [NSNumber numberWithInteger:0], kItemsInari,
-									 [NSNumber numberWithInteger:0], kItemsSashimi,
-									 [NSNumber numberWithInteger:0], kItemsChirashi, 
-									 [NSNumber numberWithInteger:0], kItemsNare,
-									 [NSNumber numberWithInteger:0], kItemsSushizushi, nil];
+									 @0, kItemsNagiri,
+									 @0, kItemsMaki,
+									 @0, kItemsOshi,
+									 @0, kItemsInari,
+									 @0, kItemsSashimi,
+									 @0, kItemsChirashi, 
+									 @0, kItemsNare,
+									 @0, kItemsSushizushi, nil];
     
 	[kSettings setObject:tempCart forKey:@"cart"];
 	
@@ -339,7 +343,7 @@
 	//	Reset the "Day Trader" achievement count
 	//
 	
-	[kSettings setObject:[NSNumber numberWithInteger:0] forKey:@"numberOfItemsSold"];
+	[kSettings setObject:@0 forKey:@"numberOfItemsSold"];
     
     //
     //  Write the changes to disk
@@ -514,16 +518,9 @@
         UINavigationController *game = [[UINavigationController alloc] initWithRootViewController:travelView];
         
         //
-        //	Set the tint color of navigation bar
-        //
-        
-        [game.navigationBar setTintColor:[UIColor darkGrayColor]];
-        
-        //
         //	Style the toolbar, as used for the "Bank" and "Credit Union" buttons
         //
-        
-        [game.toolbar setTintColor:[UIColor darkGrayColor]];
+    
         [game.toolbar setTranslucent:YES];
         
         //
@@ -650,7 +647,7 @@
     [formatter setAlwaysShowsDecimalSeparator:NO];
     [formatter setUsesGroupingSeparator:kFormatterEnabled];
     
-	NSString *message = [NSString stringWithFormat: @"%@: %@\n%@: %li/%@\n%@: ¥%@\n%@: ¥%@\n%@: ¥%@", NSLocalizedString(@"Days Left", @"how much time remains") ,kDaysLeft, NSLocalizedString(@"Cart", @"how many items the user has and how many they can carry at once"), (long)numberOfItems, kMaxCart, NSLocalizedString(@"Cash", @"how much money the player has"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]], NSLocalizedString(@"Debt", @"how much the user owes the credit union"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]], NSLocalizedString(@"Savings", @"how much the user has saved up"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]];
+	NSString *message = [NSString stringWithFormat: @"%@: %@\n%@: %li/%@\n%@: ¥%@\n%@: ¥%@\n%@: ¥%@", NSLocalizedString(@"Days Left", @"how much time remains") ,kDaysLeft, NSLocalizedString(@"Cart", @"how many items the user has and how many they can carry at once"), (long)numberOfItems, kMaxCart, NSLocalizedString(@"Cash", @"how much money the player has"), [formatter stringFromNumber:@([kCash longLongValue])], NSLocalizedString(@"Debt", @"how much the user owes the credit union"), [formatter stringFromNumber:@([kDebt longLongValue])], NSLocalizedString(@"Savings", @"how much the user has saved up"), [formatter stringFromNumber:@([kSavings longLongValue])]];
 	
     //Release the formatter
     
@@ -727,7 +724,7 @@
             //	Double remaining time
             //
             
-            [kSettings setObject:[NSNumber numberWithInt:kInitialDaysLeft*2] forKey:@"daysLeft"];
+            [kSettings setObject:@(kInitialDaysLeft*2) forKey:@"daysLeft"];
             [kSettings setBool:YES forKey:@"doubleLength"];
         }
         
@@ -777,7 +774,7 @@
 	//	Add the game to the "game count"
 	//
 	
-	[kSettings setObject:[NSNumber numberWithInteger:[kNumberOfGamesPlayed integerValue]+1] forKey:@"numberOfGamesPlayed"];
+	[kSettings setObject:@([kNumberOfGamesPlayed integerValue]+1) forKey:@"numberOfGamesPlayed"];
 	
 	//
 	//	Handle Game Center and scoring
@@ -799,7 +796,7 @@
 			//	Store the score
 			//
 			
-			[self.tempScores addObject:[NSNumber numberWithLongLong:score]];
+			[self.tempScores addObject:@(score)];
 			
 			//
 			//	Authenticate the local player
@@ -892,7 +889,7 @@
                     [self reportScore:score forCategory:kDoubleLeaderboardCategory];
                 }
                 
-                NSNumber *scoreAsNumber = [[NSNumber alloc] initWithLongLong:score]; 
+                NSNumber *scoreAsNumber = @(score); 
                 
                 
                 
@@ -959,7 +956,7 @@
                 //  Return the formatted score as a string
                 //
                 
-                NSString *scoreString = [formatter stringFromNumber:[NSNumber numberWithLongLong:score]];
+                NSString *scoreString = [formatter stringFromNumber:@(score)];
                 
                 //
                 //  Release the formatter
@@ -985,7 +982,7 @@
                 
 				NSMutableArray *tempArray = [kTempScores mutableCopy];
 				
-				[tempArray addObject:[NSNumber numberWithLongLong:score]];
+				[tempArray addObject:@(score)];
 				
 				[kSettings setObject:tempArray forKey:@"tempScores"];
 				
@@ -1052,7 +1049,7 @@
 			
 			NSMutableArray *tempArray = [kTempScores mutableCopy];
 			
-			[tempArray addObject:[NSNumber numberWithLongLong:score]];
+			[tempArray addObject:@(score)];
 			
 			[kSettings setObject:tempArray forKey:@"tempScores"];	
             
@@ -1229,7 +1226,7 @@ BOOL isGameCenterAvailable(){
             if ([[scoreReporter.category description] isEqualToString:kCheaterLeaderboardCategory]) {
                 //User cheated, don't store the score.
             }else{
-                [self.tempScores addObject:[NSNumber numberWithLongLong:[scoreReporter value]]];
+                [self.tempScores addObject:@([scoreReporter value])];
             }
 			//NSLog(@"<MBGameCenter:> Error posting score. \n%@", [error description]);
 		}else {
@@ -1268,10 +1265,10 @@ BOOL isGameCenterAvailable(){
 //
 
 - (GKAchievement*) achievementForIdentifier: (NSString*) identifier{
-    GKAchievement *achievement = [achievementsDictionary objectForKey:identifier];
+    GKAchievement *achievement = achievementsDictionary[identifier];
     if (achievement == nil){
         achievement = [[GKAchievement alloc] initWithIdentifier:identifier];
-        [achievementsDictionary setObject:achievement forKey:achievement.identifier];
+        achievementsDictionary[achievement.identifier] = achievement;
     }
     return achievement;
 }
@@ -1284,7 +1281,7 @@ BOOL isGameCenterAvailable(){
     [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray *achievements, NSError *error){
         if (error == nil){
             for (GKAchievement* achievement in achievements){
-                [achievementsDictionary setObject: achievement forKey: achievement.identifier];
+                achievementsDictionary[achievement.identifier] = achievement;
             }
         }
     }];
@@ -1313,7 +1310,7 @@ BOOL isGameCenterAvailable(){
                 //		Retain the achievement object and try again later.
                 //
                 
-                [self.tempAchievements setObject:achievement forKey:achievement.identifier];
+                (self.tempAchievements)[achievement.identifier] = achievement;
                 
                 [kSettings setObject:self.tempAchievements forKey:@"tempAchievements"];
                 
@@ -1328,28 +1325,24 @@ BOOL isGameCenterAvailable(){
                 
                 if ([achievement percentComplete] == 100.0 && ![[achievement identifier] isEqualToString:kAchievementReminisce]) {
                     
-                    NSDictionary *achievementLookup = [NSDictionary  dictionaryWithObjectsAndKeys:
-                                                       @"Reminisce", kAchievementReminisce,
-                                                       @"Manifest Destiny", kAchievementManifestDestiny, 
-                                                       @"Well Rounded", kAchievementWellRounded,
-                                                       @"Master Chef", kAchievementMasterChef,
-                                                       @"Overstock", kAchievementOverstock,
-                                                       @"Shameful", kAchievementShameful,
-                                                       @"No Nori",
-                                                       kAchievementNoNori,                                        
-                                                       @"Day Trader",
-                                                       kAchievementDayTrader,
-                                                       @"Corner The Market",kAchievementCornerTheMarket,
-                                                       @"Funazushi",                                                       kAchievementFunazushi,
-                                                       @"Five-0",                                                       kAchievementFiveO,
-                                                       @"Allergic",                                                       kAchievementAllergic,
-                                                       @"Wealthy",                                                       kAchievementWealthy,
-                                                       @"In For One",                                                       kAchievementInForOne,
-                                                       @"Merlin's Beard",kAchievementMerlinsBeard,
-                                                       @"Inheritance", kAchievementInheritance,
-                                                       @"Reserved", kAchievementReserved,
-                                                       @"Zero",                                                       kAchievementZero,
-                                                       nil];
+                    NSDictionary *achievementLookup = @{kAchievementReminisce: @"Reminisce",
+                                                       kAchievementManifestDestiny: @"Manifest Destiny", 
+                                                       kAchievementWellRounded: @"Well Rounded",
+                                                       kAchievementMasterChef: @"Master Chef",
+                                                       kAchievementOverstock: @"Overstock",
+                                                       kAchievementShameful: @"Shameful",
+                                                       kAchievementNoNori: @"No Nori",                                        
+                                                       kAchievementDayTrader: @"Day Trader",
+                                                       kAchievementCornerTheMarket: @"Corner The Market",
+                                                       kAchievementFunazushi: @"Funazushi",
+                                                       kAchievementFiveO: @"Five-0",
+                                                       kAchievementAllergic: @"Allergic",
+                                                       kAchievementWealthy: @"Wealthy",
+                                                       kAchievementInForOne: @"In For One",
+                                                       kAchievementMerlinsBeard: @"Merlin's Beard",
+                                                       kAchievementInheritance: @"Inheritance",
+                                                       kAchievementReserved: @"Reserved",
+                                                       kAchievementZero: @"Zero"};
                     
                     
                     //  iOS 5 adds game center banners
@@ -1362,7 +1355,7 @@ BOOL isGameCenterAvailable(){
                     if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending){
                         //On iOS 5, otherwise rely on default message
                     }else{
-                        [self presentBannerWithMessage:[achievementLookup objectForKey:[achievement identifier]]];
+                        [self presentBannerWithMessage:achievementLookup[[achievement identifier]]];
                     }
                     
                 }
@@ -1410,7 +1403,7 @@ BOOL isGameCenterAvailable(){
 #pragma mark - Show Message In Banner
 
 - (void)presentBannerWithNotification:(NSNotification *)notification{
-    [self presentBannerWithMessage:[[notification userInfo]objectForKey:@"message"]];
+    [self presentBannerWithMessage:[notification userInfo][@"message"]];
 }
 
 //On iOS 5, this method does nothing
@@ -1473,7 +1466,7 @@ BOOL isGameCenterAvailable(){
     [[SpiffyController sharedController] setSupportEmailAddress:@"yetanotheriphoneapp@gmail.com"];
     [[SpiffyController sharedController] setTwitterHandle:@"bermaniastudios"];
     
-    [[SpiffyController sharedController] setAppColor:[UIColor darkGrayColor]];
+    [[SpiffyController sharedController] setAppColor:[UIColor colorWithRed:0.81 green:0.16 blue:0.14 alpha:1.00]];
 }
 
 @end

@@ -77,13 +77,6 @@
 	[self.view setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0]];
 	
 	//
-	//	Tint the Navigation Bar
-	//
-	
-	[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
-	
-	
-	//
 	//	Set the background color on the web view to transparent
 	//
 	

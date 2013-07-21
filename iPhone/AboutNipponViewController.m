@@ -41,12 +41,6 @@
 	[self setTitle:@"About Nippon"];
 	
 	//
-	//	Tint the Navigation Bar
-	//
-	
-	[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
-	
-	//
 	//	Set the background color
 	//
 	

@@ -165,7 +165,7 @@ NSString *templateReviewURLIpad = @"itms-apps://ax.itunes.apple.com/WebObjects/M
 
 - (void)incrementUseCount {
 	// get the app's version
-	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
+	NSString *version = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleVersionKey];
 	
 	// get the version number that we've been tracking
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -215,7 +215,7 @@ NSString *templateReviewURLIpad = @"itms-apps://ax.itunes.apple.com/WebObjects/M
 
 - (void)incrementSignificantEventCount {
 	// get the app's version
-	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
+	NSString *version = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleVersionKey];
 	
 	// get the version number that we've been tracking
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -314,21 +314,21 @@ NSString *templateReviewURLIpad = @"itms-apps://ax.itunes.apple.com/WebObjects/M
 		return;
 	}
 	
-	NSNumber *_canPromptForRating = [[NSNumber alloc] initWithBool:canPromptForRating];
+	NSNumber *_canPromptForRating = @(canPromptForRating);
 	[NSThread detachNewThreadSelector:@selector(incrementAndRate:)
 							 toTarget:[Appirater sharedInstance]
 						   withObject:_canPromptForRating];
 }
 
 + (void)applicationDidEnterForeground:(BOOL)canPromptForRating {
-	NSNumber *_canPromptForRating = [[NSNumber alloc] initWithBool:canPromptForRating];
+	NSNumber *_canPromptForRating = @(canPromptForRating);
 	[NSThread detachNewThreadSelector:@selector(incrementAndRate:)
 							 toTarget:[Appirater sharedInstance]
 						   withObject:_canPromptForRating];
 }
 
 + (void)userDidSignificantEvent:(BOOL)canPromptForRating {
-	NSNumber *_canPromptForRating = [[NSNumber alloc] initWithBool:canPromptForRating];
+	NSNumber *_canPromptForRating = @(canPromptForRating);
 	[NSThread detachNewThreadSelector:@selector(incrementSignificantEventAndRate:)
 							 toTarget:[Appirater sharedInstance]
 						   withObject:_canPromptForRating];
@@ -351,8 +351,8 @@ NSString *templateReviewURLIpad = @"itms-apps://ax.itunes.apple.com/WebObjects/M
 			NSString *reviewURL = nil;
 			// figure out which URL to use. iPad only apps have to use a different app store URL
 			NSDictionary *bundleDictionary = [[NSBundle mainBundle] infoDictionary];
-			if ([bundleDictionary objectForKey:@"UISupportedInterfaceOrientations"] != nil &&
-				[bundleDictionary objectForKey:@"UISupportedInterfaceOrientations~ipad"] == nil)
+			if (bundleDictionary[@"UISupportedInterfaceOrientations"] != nil &&
+				bundleDictionary[@"UISupportedInterfaceOrientations~ipad"] == nil)
 			{
 				// it's an iPad only app, so use the iPad url
 				reviewURL = [templateReviewURLIpad stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%d", APPIRATER_APP_ID]];

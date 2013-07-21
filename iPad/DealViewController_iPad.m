@@ -38,14 +38,14 @@
 	//	Create an array of the items
 	//
 	
-    NSArray *tempItems = [[NSArray alloc] initWithObjects:kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi, nil];
+    NSArray *tempItems = @[kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi];
 	[self setItems:tempItems];
 	
 	//
 	//	Create an array of prices
 	//
 	
-	NSArray *tempPrices = [[NSArray alloc] initWithObjects:kPriceOfNagiri, kPriceOfMaki, kPriceOfOshi, kPriceOfInari, kPriceOfSashimi, kPriceOfChirashi, kPriceOfNare, kPriceOfSushizushi, nil];
+	NSArray *tempPrices = @[kPriceOfNagiri, kPriceOfMaki, kPriceOfOshi, kPriceOfInari, kPriceOfSashimi, kPriceOfChirashi, kPriceOfNare, kPriceOfSushizushi];
 	[self setPrices: tempPrices];
 	
 	//
@@ -152,7 +152,7 @@
 		
 		UIBarButtonItem *bankButton = [[UIBarButtonItem alloc] initWithTitle:@"Visit the Bank" style:UIBarButtonItemStyleBordered target:self action:@selector(showBank)];
 		
-		[self.navigationController.toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceButtonItem, bankButton, flexibleSpaceButtonItem, nil] animated:YES];
+		[self.navigationController.toolbar setItems:@[flexibleSpaceButtonItem, bankButton, flexibleSpaceButtonItem] animated:YES];
 		
 		//
 		//	Release the bar button items
@@ -181,7 +181,7 @@
 		//
 		
 		UIBarButtonItem *creditUnionButton = [[UIBarButtonItem alloc] initWithTitle:@"Visit the Credit Union" style:UIBarButtonItemStyleBordered target:self action:@selector(showCreditUnion)];
-		[self.navigationController.toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceButtonItem, creditUnionButton, flexibleSpaceButtonItem, nil] animated:YES];
+		[self.navigationController.toolbar setItems:@[flexibleSpaceButtonItem, creditUnionButton, flexibleSpaceButtonItem] animated:YES];
 		
 		//
 		//	Release the bar button items
@@ -288,7 +288,7 @@
 	//	Set up the cell labels
 	//
 	
-	[cell.textLabel setText:[self.items objectAtIndex:[indexPath row]]];
+	[cell.textLabel setText:(self.items)[[indexPath row]]];
 	
     //
     //
@@ -304,10 +304,10 @@
     //  Set the detail text
     //
     
-    if ([[kCart objectForKey:cell.textLabel.text]integerValue] > 0) {
-        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@ - %@: %li", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:[self.prices objectAtIndex:[indexPath row]]], NSLocalizedString(@"You have", @""), (long)[[kCart objectForKey:cell.textLabel.text]integerValue]]];     
+    if ([kCart[cell.textLabel.text]integerValue] > 0) {
+        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@ - %@: %li", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:(self.prices)[[indexPath row]]], NSLocalizedString(@"You have", @""), (long)[kCart[cell.textLabel.text]integerValue]]];     
     }else{
-        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:[self.prices objectAtIndex:[indexPath row]]]]];
+        [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@%@", NSLocalizedString(@"Price", @"") , kYen, [formatter stringFromNumber:(self.prices)[[indexPath row]]]]];
     }
     
     //
@@ -382,7 +382,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	FinancialViewController_iPad *financeView = [[FinancialViewController_iPad alloc] initWithMode:kModeItem andItem:[[tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]] textLabel].text atPrice:[self.prices objectAtIndex:[[tableView indexPathForSelectedRow] row]]];
+	FinancialViewController_iPad *financeView = [[FinancialViewController_iPad alloc] initWithMode:kModeItem andItem:[[tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]] textLabel].text atPrice:(self.prices)[[[tableView indexPathForSelectedRow] row]]];
 	
 	[self.navigationController pushViewController:financeView animated:YES];
 	

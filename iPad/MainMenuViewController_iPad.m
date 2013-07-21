@@ -37,7 +37,7 @@
 	//	Set the version label
 	//
 	
-	[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+	[versionLabel setText:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"v", @"an abbreviation for the word 'version'") ,[[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]]];
 	
     //
     //

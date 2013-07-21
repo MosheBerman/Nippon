@@ -12,6 +12,6 @@
 
 - (void)presentBannerWithMessage:(NSString *)message
 {
-    [kNotificationCenter postNotificationName:kShowAlertNotification object:nil userInfo:[NSDictionary dictionaryWithObject:message forKey:@"message"]];
+    [kNotificationCenter postNotificationName:kShowAlertNotification object:nil userInfo:@{@"message": message}];
 }
 @end

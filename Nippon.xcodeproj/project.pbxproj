@@ -801,7 +801,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
-					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -830,7 +829,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
-					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -898,7 +896,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
-					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
@@ -948,7 +945,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
-					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
 					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
