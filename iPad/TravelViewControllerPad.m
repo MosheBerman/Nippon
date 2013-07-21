@@ -108,7 +108,7 @@
         [navController setModalPresentationStyle:UIModalPresentationFormSheet];
         
         //
-        [self presentModalViewController:navController animated:YES];
+        [self presentViewController:navController animated:YES completion:nil];
         
         [navController release];
         //NSLog(@"Secret button pressed. devMode count is at %i", devModeCount);
@@ -313,7 +313,7 @@
 	//
 	//
 	
-	[self presentModalViewController:navController animated:YES];
+	[self presentViewController:navController animated:YES completion:nil];
 	
 	//
 	//

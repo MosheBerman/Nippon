@@ -339,7 +339,7 @@
         //  Release the developer mode view
         //
         
-        [self.parentViewController dismissModalViewControllerAnimated:YES];
+        [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
     }
     
     

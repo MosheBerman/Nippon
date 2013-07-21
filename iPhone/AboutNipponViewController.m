@@ -123,7 +123,7 @@
 			//	Center the text
 			//
 			
-			[cell.textLabel setTextAlignment:UITextAlignmentCenter];
+			[cell.textLabel setTextAlignment:NSTextAlignmentCenter];
 			
 			//
 			//	Set the text
@@ -147,7 +147,7 @@
 			//	Align the label
 			//
 			
-			[cell.textLabel setTextAlignment:UITextAlignmentCenter];
+			[cell.textLabel setTextAlignment:NSTextAlignmentCenter];
 			
 			//
 			//	Set the text

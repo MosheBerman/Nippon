@@ -19,7 +19,7 @@
 //A shortcut to the ¥ (YEN) symbol
 #define kYen @"¥"
 
-//A shrtcut to the game center leaderboard name constant
+//A shortcut to the game center leaderboard name constant
 #define kLeaderboardCategory @"com.yetanotheriphoneapp.nippon.highscores"
 
 //A shortcut to the game center leaderboard name constant

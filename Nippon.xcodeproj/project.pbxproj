@@ -19,6 +19,7 @@
 		461931F714C5CC9F001F72B7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461931F614C5CC9F001F72B7 /* MessageUI.framework */; };
 		461931FA14C5CF86001F72B7 /* NipponAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 461931F914C5CF86001F72B7 /* NipponAppDelegate.m */; };
 		461931FD14C5E3B1001F72B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461931FC14C5E3B1001F72B7 /* QuartzCore.framework */; };
+		462A6C6816C78285003467A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 462A6C6716C78285003467A1 /* Default-568h@2x.png */; };
 		462ADC9013765ADB00487F04 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 462ADC8F13765ADB00487F04 /* pin.png */; };
 		4632366D130CA6640092FA16 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 46323654130CA6640092FA16 /* Appirater.m */; };
 		4632366E130CA6640092FA16 /* Appirater.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46323656130CA6640092FA16 /* Appirater.strings */; };
@@ -40,6 +41,9 @@
 		4642CB7F13315A7000019387 /* 4Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7813315A5F00019387 /* 4Pad.png */; };
 		4642CB8013315A7000019387 /* 5Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7913315A6700019387 /* 5Pad.png */; };
 		4642CB8113315A7000019387 /* 6Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4642CB7A13315A6A00019387 /* 6Pad.png */; };
+		4642F51B179983E500F2152B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F51A179983E500F2152B /* SenTestingKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4642F51D179983F100F2152B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F51C179983F100F2152B /* Social.framework */; };
+		4642F5281799975E00F2152B /* libSpiffyKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4642F5271799975E00F2152B /* libSpiffyKit.a */; };
 		464E6BEE13142E9300E71068 /* Merlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 464E6BED13142E9300E71068 /* Merlin.png */; };
 		4650779C12F368D700C92966 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650779B12F368D700C92966 /* HighScoresViewController.m */; };
 		46544C8F130C7F3E00FBB776 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46544C8E130C7F3E00FBB776 /* SystemConfiguration.framework */; };
@@ -111,6 +115,7 @@
 		461931F814C5CF86001F72B7 /* NipponAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = NipponAppDelegate.h; path = iPad/NipponAppDelegate.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		461931F914C5CF86001F72B7 /* NipponAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; name = NipponAppDelegate.m; path = iPad/NipponAppDelegate.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		461931FC14C5E3B1001F72B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		462A6C6716C78285003467A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "iPhone/Images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		462ADC8F13765ADB00487F04 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = images/TravelView/pin.png; sourceTree = "<group>"; };
 		46323653130CA6640092FA16 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Appirater/Appirater.h; sourceTree = "<group>"; };
 		46323654130CA6640092FA16 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Appirater/Appirater.m; sourceTree = "<group>"; };
@@ -136,6 +141,12 @@
 		4642CB7813315A5F00019387 /* 4Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4Pad.png; path = images/instructions/4Pad.png; sourceTree = "<group>"; };
 		4642CB7913315A6700019387 /* 5Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5Pad.png; path = images/instructions/5Pad.png; sourceTree = "<group>"; };
 		4642CB7A13315A6A00019387 /* 6Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6Pad.png; path = images/instructions/6Pad.png; sourceTree = "<group>"; };
+		4642F51A179983E500F2152B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4642F51C179983F100F2152B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4642F5241799975E00F2152B /* SpiffyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyController.h; sourceTree = "<group>"; };
+		4642F5251799975E00F2152B /* SpiffyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyKit.h; sourceTree = "<group>"; };
+		4642F5261799975E00F2152B /* SpiffyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiffyViewController.h; sourceTree = "<group>"; };
+		4642F5271799975E00F2152B /* libSpiffyKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSpiffyKit.a; sourceTree = "<group>"; };
 		464E6BED13142E9300E71068 /* Merlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Merlin.png; path = images/TravelView/Merlin.png; sourceTree = "<group>"; };
 		4650779A12F368D700C92966 /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
 		4650779B12F368D700C92966 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
@@ -208,6 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4642F51D179983F100F2152B /* Social.framework in Frameworks */,
+				4642F51B179983E500F2152B /* SenTestingKit.framework in Frameworks */,
 				461931FD14C5E3B1001F72B7 /* QuartzCore.framework in Frameworks */,
 				461931F714C5CC9F001F72B7 /* MessageUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -217,6 +230,7 @@
 				46544C8F130C7F3E00FBB776 /* SystemConfiguration.framework in Frameworks */,
 				46323762130F08290092FA16 /* CFNetwork.framework in Frameworks */,
 				469C19D1146232AE00335BBD /* libTestFlight.a in Frameworks */,
+				4642F5281799975E00F2152B /* libSpiffyKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,19 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				469C19D2146232BA00335BBD /* TestFlight */,
-				46EA34C3132C9BEF00E32740 /* Default-Portrait~ipad.png */,
-				46EA34C1132C9BDC00E32740 /* Default-Landscape~ipad.png */,
-				46D4479513286A3600D1FF7A /* iTunesArtwork */,
+				4642F520179994BC00F2152B /* Images */,
 				46323677130CA66A0092FA16 /* Appirater */,
 				460C600412F62F3300164FF1 /* Localizable.strings */,
-				4662539B12EF85C1005E4B60 /* Default.png */,
-				4662539C12EF85C1005E4B60 /* Default@2x.png */,
-				46F32C0112EF616E000829F3 /* Icon-72.png */,
-				46F32C0212EF616E000829F3 /* Icon-Small-50.png */,
-				46F32C0312EF616E000829F3 /* Icon-Small.png */,
-				46F32C0412EF616E000829F3 /* Icon-Small@2x.png */,
-				46F32C0512EF616E000829F3 /* Icon.png */,
-				46F32C0612EF616E000829F3 /* Icon@2x.png */,
 				461931F814C5CF86001F72B7 /* NipponAppDelegate.h */,
 				461931F914C5CF86001F72B7 /* NipponAppDelegate.m */,
 				2860E32A111B888700E27156 /* iPad */,
@@ -349,6 +353,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4642F5211799975E00F2152B /* spiffykit */,
+				4642F51C179983F100F2152B /* Social.framework */,
+				4642F51A179983E500F2152B /* SenTestingKit.framework */,
 				461931FC14C5E3B1001F72B7 /* QuartzCore.framework */,
 				461931F614C5CC9F001F72B7 /* MessageUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -441,6 +448,52 @@
 			name = Appirater;
 			sourceTree = "<group>";
 		};
+		4642F520179994BC00F2152B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				46D4479513286A3600D1FF7A /* iTunesArtwork */,
+				46EA34C3132C9BEF00E32740 /* Default-Portrait~ipad.png */,
+				46EA34C1132C9BDC00E32740 /* Default-Landscape~ipad.png */,
+				4662539B12EF85C1005E4B60 /* Default.png */,
+				462A6C6716C78285003467A1 /* Default-568h@2x.png */,
+				4662539C12EF85C1005E4B60 /* Default@2x.png */,
+				46F32C0112EF616E000829F3 /* Icon-72.png */,
+				46F32C0212EF616E000829F3 /* Icon-Small-50.png */,
+				46F32C0312EF616E000829F3 /* Icon-Small.png */,
+				46F32C0412EF616E000829F3 /* Icon-Small@2x.png */,
+				46F32C0512EF616E000829F3 /* Icon.png */,
+				46F32C0612EF616E000829F3 /* Icon@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		4642F5211799975E00F2152B /* spiffykit */ = {
+			isa = PBXGroup;
+			children = (
+				4642F5221799975E00F2152B /* include */,
+				4642F5271799975E00F2152B /* libSpiffyKit.a */,
+			);
+			path = spiffykit;
+			sourceTree = "<group>";
+		};
+		4642F5221799975E00F2152B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				4642F5231799975E00F2152B /* SpiffyKit */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		4642F5231799975E00F2152B /* SpiffyKit */ = {
+			isa = PBXGroup;
+			children = (
+				4642F5241799975E00F2152B /* SpiffyController.h */,
+				4642F5251799975E00F2152B /* SpiffyKit.h */,
+				4642F5261799975E00F2152B /* SpiffyViewController.h */,
+			);
+			path = SpiffyKit;
+			sourceTree = "<group>";
+		};
 		469C19CE14621BED00335BBD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,7 +552,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Nippon" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -591,6 +644,7 @@
 				4642CB8113315A7000019387 /* 6Pad.png in Resources */,
 				46843FB9137201F900EA27C6 /* MessageBanner.xib in Resources */,
 				462ADC9013765ADB00487F04 /* pin.png in Resources */,
+				462A6C6816C78285003467A1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,16 +788,23 @@
 					armv7,
 				);
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Nippon_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
+					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
+					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
 				SDKROOT = iphoneos;
@@ -760,14 +821,21 @@
 					armv7,
 				);
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Nippon_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
+					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
+					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
 				SDKROOT = iphoneos;
@@ -780,19 +848,39 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Moshe Berman (JFYZ2Q7278)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Moshe Berman";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Moshe Berman";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0A00E17C-9ACE-4C0B-91B9-C98403FC0A99";
+				PROVISIONING_PROFILE = "730EAD50-ACB2-4F1D-B603-CA0933ACAB1D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "730EAD50-ACB2-4F1D-B603-CA0933ACAB1D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "App Store";
 		};
-		4650788712F505FC00C92966 /* App Store */ = {
+		467930CD16C7895E0067BE06 /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Moshe Berman";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3D6AE1DB-5628-4450-ABA0-B82D399694D8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "App Store";
+		};
+		467930CE16C7895E0067BE06 /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -800,19 +888,28 @@
 					armv6,
 					armv7,
 				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Moshe Berman";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Moshe Berman";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Nippon_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
+					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
+					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "90C65A01-5213-4E51-9E1D-0A3F4728C69A";
+				PROVISIONING_PROFILE = "3D6AE1DB-5628-4450-ABA0-B82D399694D8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3D6AE1DB-5628-4450-ABA0-B82D399694D8";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -827,7 +924,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0E70EF55-A61A-4740-967D-56F0B799E23D";
 				SDKROOT = iphoneos;
@@ -846,14 +943,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Moshe Berman";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Moshe Berman";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Nippon_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Nippon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK\"",
+					"\"$(SRCROOT)/spiffykit/SpiffyTester\"",
+					"\"$(SRCROOT)/spiffykit\"",
 				);
 				PRODUCT_NAME = Nippon;
 				PROVISIONING_PROFILE = "E1D72CBD-4D07-4AA6-8D47-72FAA2ADBC86";
@@ -872,7 +976,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -886,7 +990,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -901,8 +1005,8 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				467930CE16C7895E0067BE06 /* App Store */,
 				46CC1D1F12E78358001BE8B0 /* Ad Hoc */,
-				4650788712F505FC00C92966 /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -912,6 +1016,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				467930CD16C7895E0067BE06 /* App Store */,
 				46CC1D1E12E78358001BE8B0 /* Ad Hoc */,
 				4650788612F505FC00C92966 /* App Store */,
 			);

@@ -535,7 +535,7 @@
         //	Present the game view
         //
         
-        [self.mainMenu presentModalViewController:game animated:YES];
+        [self.mainMenu presentViewController:game animated:YES completion:nil];
         
         //
         //	release the game view
@@ -549,7 +549,7 @@
         if([self.mainMenu respondsToSelector:@selector(presentViewController:animated:completion:)]){
             [self.mainMenu presentViewController:travelView animated:YES completion:^{}];
         }else{
-            [self.mainMenu presentModalViewController:travelView animated:YES];
+            [self.mainMenu presentViewController:travelView animated:YES completion:nil];
         }
     }
 	
@@ -597,7 +597,7 @@
     //  Present the modal view
     // 
 	
-	[self.mainMenu presentModalViewController:navigationController animated:YES];
+	[self.mainMenu presentViewController:navigationController animated:YES completion:nil];
 	
     //
     //  Release the navigation controller
@@ -612,7 +612,7 @@
 //
 
 - (void) hideInstructions{
-	[self.mainMenu dismissModalViewControllerAnimated:YES];
+	[self.mainMenu dismissViewControllerAnimated:YES completion:nil];
 }
 
 //
@@ -625,7 +625,7 @@
     //
     //
     
-	[mainMenu dismissModalViewControllerAnimated:YES];
+	[mainMenu dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -722,7 +722,7 @@
 		
 		[navigationController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 		
-		[self.mainMenu presentModalViewController:navigationController animated:YES];
+		[self.mainMenu presentViewController:navigationController animated:YES completion:nil];
 		[navigationController release];
 	}
     
@@ -1167,7 +1167,8 @@ BOOL isGameCenterAvailable(){
 //
 
 - (void) authenticateLocalPlayer{
-	[[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error) {
+    
+    [[GKLocalPlayer localPlayer] setAuthenticateHandler:^(UIViewController *viewController, NSError *error) {
 		if (error == nil){
 			
             if([kSettings boolForKey:@"hasReminisced"] != YES){
@@ -1272,7 +1273,7 @@ BOOL isGameCenterAvailable(){
 	GKLeaderboardViewController *leaderboardController = [[[GKLeaderboardViewController alloc] init] autorelease];
 	if (leaderboardController != nil){
 		leaderboardController.leaderboardDelegate = self.mainMenu;
-		[self.mainMenu presentModalViewController:leaderboardController animated: YES];
+		[self.mainMenu presentViewController:leaderboardController animated:YES completion:nil];
 	}
 }
 
@@ -1284,7 +1285,7 @@ BOOL isGameCenterAvailable(){
 	GKAchievementViewController *achivementController = [[[GKAchievementViewController alloc] init] autorelease];
 	if (achivementController != nil){
 		achivementController.achievementDelegate = self.mainMenu;
-		[self.mainMenu presentModalViewController:achivementController animated: YES];
+		[self.mainMenu presentViewController:achivementController animated:YES completion:nil];
 	}
 }
 
@@ -1498,7 +1499,7 @@ BOOL isGameCenterAvailable(){
 
 - (void)configureSpiffy
 {
-    [ setAppStoreIdentifier:@"415518235"];
+    [[SpiffyController sharedController] setAppStoreIdentifier:@"415518235"];
     [[SpiffyController sharedController] setAppURL:@"https://itunes.apple.com/us/app/nippon/id415518235?ls=1&mt=8"];
     [[SpiffyController sharedController] setWebsiteURL:@"http://mosheberman.com"];
     [[SpiffyController sharedController] setMoreAppsURL:@"http://appstore.com/mosheberman"];

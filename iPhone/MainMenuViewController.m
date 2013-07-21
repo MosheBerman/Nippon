@@ -49,7 +49,7 @@
         //release the score changer
         [scoreChanger release];
         
-        [self presentModalViewController:navController animated:YES];
+        [self presentViewController:navController animated:YES completion:nil];
 				
         [navController release];
         //NSLog(@"Secret button pressed. devMode count is at %i", devModeCount);
@@ -235,7 +235,7 @@
     if([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]){
         [self dismissViewControllerAnimated:YES completion:^{}];
     }else{
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
     
@@ -249,11 +249,11 @@
 //
 
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController{
-		[self dismissModalViewControllerAnimated:YES];
+		[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)achievementViewControllerDidFinish:(GKAchievementViewController *)viewController{
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -

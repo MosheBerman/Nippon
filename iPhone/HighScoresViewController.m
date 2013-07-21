@@ -20,23 +20,23 @@
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
     self = [super initWithStyle:style];
-    if (self) {		
-		
-		//
-		//	Load the saved high scores
-		//
-		//
-		//	Sort the scores
-		//
-		
-		NSArray *descriptors = [NSArray arrayWithObject:[[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]autorelease]];
-		
-		if (kTempScores != nil && [kTempScores count] > 1){
-			self.highScores = [kTempScores sortedArrayUsingDescriptors:descriptors];
-		}
-
+    if (self) {
+				
+				//
+				//	Load the saved high scores
+				//
+				//
+				//	Sort the scores
+				//
+				
+				NSArray *descriptors = [NSArray arrayWithObject:[[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]autorelease]];
+				
+				if (kTempScores != nil && [kTempScores count] > 1){
+						self.highScores = [kTempScores sortedArrayUsingDescriptors:descriptors];
+				}
+				
     }
-	
+		
     return self;
 }
 
@@ -47,50 +47,50 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-
-	//
-	//	Add the Done button
-	//
-	
-	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSelf)];
-	self.navigationItem.leftBarButtonItem = doneButton;
-	[doneButton release];
-	
-	//
-	//	Set the title of the high scores
-	//
-	
-	self.title = @"High Scores";
-	
-	//
-	//	Tint the Navigation Bar
-	//
-	
-	[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
+		
+		//
+		//	Add the Done button
+		//
+		
+		UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSelf)];
+		self.navigationItem.leftBarButtonItem = doneButton;
+		[doneButton release];
+		
+		//
+		//	Set the title of the high scores
+		//
+		
+		self.title = @"High Scores";
+		
+		//
+		//	Tint the Navigation Bar
+		//
+		
+		[self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
 }
 
 
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
 /*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
 /*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
 /*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -111,15 +111,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	if ([highScores count] > 0) {
-		if ([highScores count] < 10) {
-			return [highScores count];
-		}else{
-			return 10;
+		if ([highScores count] > 0) {
+				if ([highScores count] < 10) {
+						return [highScores count];
+				}else{
+						return 10;
+				}
 		}
-	}
-	
-	return 1;
+		
+		return 1;
 }
 
 
@@ -132,89 +132,89 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-	
-	//
-	//	Center the scores
-	//
-	
-	[cell.textLabel setTextAlignment:UITextAlignmentCenter];
-	
-	//
-	//	If there are scores to show
+		
+		//
+		//	Center the scores
+		//
+		
+		[cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+		
+		//
+		//	If there are scores to show
     //
-	
-	if ([self.highScores count] > 0) {
 		
-		//
-		//	Load the score
-		//
-		
-		if ([indexPath row] < [highScores count]) {
-			
-			[cell.textLabel setText:[NSString stringWithFormat:@"%@%i",kYen, [[highScores objectAtIndex:[indexPath row]]integerValue]]];
+		if ([self.highScores count] > 0) {
+				
+				//
+				//	Load the score
+				//
+				
+				if ([indexPath row] < [highScores count]) {
+						
+						[cell.textLabel setText:[NSString stringWithFormat:@"%@%i",kYen, [[highScores objectAtIndex:[indexPath row]]integerValue]]];
+				}
+				
+		}else {
+				
+				//
+				//	Inform the user that there are no high scores
+				//
+				
+				[cell.textLabel setText:@"No High Scores"];
 		}
 		
-	}else {
-		
 		//
-		//	Inform the user that there are no high scores
+		//	Don't animate selections
 		//
 		
-		[cell.textLabel setText:@"No High Scores"];
-	}
-
-	//
-	//	Don't animate selections
-	//
-	
-	[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
 
 
 - (void) dismissSelf{
-	[self.parentViewController dismissModalViewControllerAnimated:YES];		
+		[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source.
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+ }
+ }
+ */
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark -
@@ -223,12 +223,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
     /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+		 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
+		 [self.navigationController pushViewController:detailViewController animated:YES];
+		 [detailViewController release];
+		 */
 }
 
 
@@ -249,7 +249,7 @@
 
 
 - (void)dealloc {
-	[highScores release];
+		[highScores release];
     [super dealloc];
 }
 
