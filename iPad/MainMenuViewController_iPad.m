@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController_iPad.h"
 #import "AppDelegate_iPad.h"
+#import "SpiffyKit.h"
 
 @implementation MainMenuViewController_iPad
 @synthesize buttonWrapperView;
@@ -184,11 +185,11 @@
 //
 
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController{
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)achievementViewControllerDidFinish:(GKAchievementViewController *)viewController{
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -214,60 +215,9 @@
 #pragma mark - Contact the dev
 
 - (IBAction)contactTheDev:(id)sender{
-    
-    //
-    //  Check for mail setup
-    //
-    
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error",@"Error")
-                                                        message:NSLocalizedString(@"Mail is not set up. You can set it up in the Mail app, or email the developer at yetanotheriphoneapp@gmail.com. Thanks!", @"mail error message")
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK",@"") 
-                                              otherButtonTitles: nil];
-        [alert show];
-        [alert release];
-        return;
-    }
-    
-    //
-    //  Create the mail composer
-    //
-    
-    MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
-    
-    //
-    //  Configure the email
-    //
-    
-    [mailVC setToRecipients:[NSArray arrayWithObject:@"yetanotheriphoneapp@gmail.com"]];
-    
-    //
-    //  Build the mail
-    //
-    
-    NSString *iOSVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *device = [[UIDevice currentDevice]model];
-    
-    NSString *message = [NSString stringWithFormat:@"Hey Moshe,\n I'm playing Nippon v%@ on an %@ running iOS %@. I have some feedback for you: ", appversion, device, iOSVersion];
-    
-    [mailVC setMessageBody:message isHTML:NO];
-    [mailVC setSubject:@"Nippon Feedback"];
-    
-    mailVC.mailComposeDelegate = self;
-    
-    [mailVC setModalPresentationStyle:UIModalPresentationFormSheet]; 
-    
-    if([self respondsToSelector:@selector(presentViewController:animated:completion:)]){
-        [self presentViewController:mailVC animated:YES completion:^{}];
-    }else{
-        [self presentModalViewController:mailVC animated:YES];
-    }
-    
-    [mailVC release];
+
+		[[SpiffyController sharedController] presentInViewController:self fromRectWhereApplicable:((UIButton*)sender).frame];
+
 }
 
 //
@@ -288,7 +238,7 @@
     if([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]){
         [self dismissViewControllerAnimated:YES completion:^{}];
     }else{
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
     
