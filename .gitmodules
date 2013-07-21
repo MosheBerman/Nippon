@@ -1,0 +1,3 @@
+[submodule "spiffykit"]
+	path = spiffykit
+	url = git@bitbucket.org:moshberm/spiffykit.git
