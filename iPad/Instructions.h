@@ -14,8 +14,8 @@
 	IBOutlet UIPageControl *pageControl;   
 }
 
-@property (nonatomic, retain) UIScrollView *scroller;
-@property (nonatomic, retain) UIPageControl *pageControl;
+@property (nonatomic, strong) UIScrollView *scroller;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 - (void) setUpHelpInfo;
 

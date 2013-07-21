@@ -59,20 +59,20 @@
 	
 }
 
-@property (nonatomic, retain) UIPopoverController *popover;
-@property (nonatomic, retain) UIBarButtonItem *informationButton;
-@property (nonatomic, retain) UIView *landscapeView;
-@property (nonatomic, retain) UIView *portraitView;
+@property (nonatomic, strong) UIPopoverController *popover;
+@property (nonatomic, strong) UIBarButtonItem *informationButton;
+@property (nonatomic, strong) UIView *landscapeView;
+@property (nonatomic, strong) UIView *portraitView;
 
 //
 //
 //
 
-@property (nonatomic, retain) UILabel *locationLabelLandscape;
-@property (nonatomic, retain) UILabel *locationLabelPortrait;
-@property (nonatomic, retain) UILabel *timeLabelLandscape;
-@property (nonatomic, retain) UILabel *timeLabelPortrait;
-@property (nonatomic, retain) UIImageView *locationView;
+@property (nonatomic, strong) UILabel *locationLabelLandscape;
+@property (nonatomic, strong) UILabel *locationLabelPortrait;
+@property (nonatomic, strong) UILabel *timeLabelLandscape;
+@property (nonatomic, strong) UILabel *timeLabelPortrait;
+@property (nonatomic, strong) UIImageView *locationView;
 
 
 

@@ -54,7 +54,6 @@
 		
 		UIBarButtonItem *confirmButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Confirm", @"A button confirming the player's action") style:UIBarButtonItemStyleDone target:self action:@selector(handleConfirm)];
 		[self.navigationItem setRightBarButtonItem:confirmButton];
-		[confirmButton release];
 	}
 	
 	return self;
@@ -181,13 +180,11 @@
 		
 		UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You have %@%@",kYen,[formatter stringFromNumber:kCash]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 		self.navigationItem.rightBarButtonItem = yenButton;
-		[yenButton release];
 		
         //
         //  Release the formatter
         //
         
-        [formatter release];
         
 	}else if ([[self mode] isEqualToString:kModeBank]) {
 		
@@ -213,13 +210,11 @@
 			self.navigationItem.rightBarButtonItem = yenButton;
 			
             
-            [yenButton release];
 			
             //
             //
             //
             
-            [formatter release];
         
 		}else {
 			
@@ -227,7 +222,6 @@
 			self.navigationItem.rightBarButtonItem = yenButton;
 			
             
-            [yenButton release];
 		}
         
 
@@ -251,13 +245,11 @@
 		
 		UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe %@%@", kYen, [formatter stringFromNumber:kDebt]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 		self.navigationItem.rightBarButtonItem = yenButton;
-		[yenButton release];
 		
         //
         //  Release the formatter
         //
         
-        [formatter release];
 	}else if([self.mode isEqualToString:kModeDeveloper]){
         
         //
@@ -265,7 +257,7 @@
         //
         
         
-        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parentViewController action:@selector(dismissModalViewControllerAnimated:)] autorelease];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parentViewController action:@selector(dismissModalViewControllerAnimated:)];
     }
 	
 	
@@ -400,7 +392,6 @@
 		
 		UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You have %@%@", kYen, kCash] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 		self.navigationItem.rightBarButtonItem = yenButton;
-		[yenButton release];
 		
 	}else if ([[self mode] isEqualToString:kModeBank]) {
 		
@@ -427,13 +418,11 @@
         //  Release the yen button
         //
         
-        [yenButton release];
         
         //
         //  Release the formatter
         //
         
-        [formatter release];
 		
 	}else if ([[self mode] isEqualToString:kModeCreditUnion]) {
 		
@@ -462,17 +451,14 @@
             //
             //
             
-            [yenButton release];
             
             //
             //
             //
             
-            [formatter release];
 		}else {
 			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
-			[yenButton release];
 		}
 		
 		
@@ -546,7 +532,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}else if (numberOfEmptySpaces < 1) {
 				
@@ -560,7 +545,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 			}else {
 				
 				//
@@ -573,7 +557,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}
 			
@@ -607,7 +590,6 @@
 													  otherButtonTitles:nil];
 				
 				[alert show];
-				[alert release];
 			}			
 		}
 		
@@ -638,7 +620,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 			}
 			
 			
@@ -663,7 +644,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 			}
 		}
 		
@@ -700,7 +680,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}
 			
@@ -743,7 +722,6 @@
 															  cancelButtonTitle:@"Okay" 
 															  otherButtonTitles:nil];
 						[alert show];
-						[alert release];
 						
 					}
 					
@@ -762,7 +740,6 @@
 													  cancelButtonTitle:@"Okay" 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}
 			
@@ -867,7 +844,6 @@
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		return NO;
 		
@@ -912,9 +888,8 @@
 			
 			[tempCart setObject:[NSNumber numberWithInteger:[[kCart objectForKey:self.title] integerValue] + [amountBox.text integerValue]] forKey:[self title]];
 			
-			[kSettings setObject:[[tempCart copy] autorelease] forKey:@"cart"];
+			[kSettings setObject:[tempCart copy] forKey:@"cart"];
 			
-			[tempCart release];
 			
 			//
 			//	Add the sale to the "number of items bought" count
@@ -1033,7 +1008,6 @@
 													  cancelButtonTitle:@"Okay"
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}else if ([amountBox.text integerValue] * [self price] > [kCash longValue]) {
 				
@@ -1048,7 +1022,6 @@
 													  cancelButtonTitle:@"Okay"
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}else if (numberOfItemsOnYou > [kMaxCart integerValue]) {
 				
@@ -1063,7 +1036,6 @@
 													  cancelButtonTitle:@"Okay"
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}
 			
@@ -1097,7 +1069,6 @@
 											  cancelButtonTitle:@"OK" 
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		return NO;
 		
@@ -1120,7 +1091,6 @@
 			
 			[kSettings setObject:tempCart forKey:@"cart"];
 			
-			[tempCart release];
 			
 			//
 			//	Add the cash to the player's wallet
@@ -1184,7 +1154,6 @@
 													  cancelButtonTitle:@"Okay"
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 			}else{
 				
@@ -1198,7 +1167,6 @@
 													  cancelButtonTitle:@"Okay"
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 			}
 			
 			return NO;
@@ -1232,7 +1200,6 @@
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		return NO;
 		
@@ -1282,7 +1249,6 @@
 												  cancelButtonTitle:@"Okay" 
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			return NO;
 		}
@@ -1311,7 +1277,6 @@
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		return NO;
 	}else {
@@ -1356,7 +1321,6 @@
 												  cancelButtonTitle:@"OK"
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			return NO;
 		}
@@ -1389,7 +1353,6 @@
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		return NO;
 		
@@ -1440,7 +1403,6 @@
 												  cancelButtonTitle:@"Okay" 
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			return NO;
 		}
@@ -1474,7 +1436,6 @@
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 		//
 		//	EASTER EGG - If the user enters five zeros, they get ¥500 for free. Sweet!
@@ -1550,7 +1511,6 @@
 												  cancelButtonTitle:@"No" 
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			return NO;
 			
@@ -1566,7 +1526,6 @@
 												  cancelButtonTitle:@"No" 
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			return NO;
 		}
@@ -1592,12 +1551,6 @@
 }
 
 
-- (void)dealloc {
-	[modeSelector release];
-	[mode release];
-	[amountBox release];
-    [super dealloc];
-}
 
 
 @end

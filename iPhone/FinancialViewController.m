@@ -179,13 +179,11 @@
         
 		UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You have %@%@",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 		self.navigationItem.rightBarButtonItem = yenButton;
-		[yenButton release];
 		
         //
         //  release the formatter
         //
         
-        [formatter release];
         
 
         
@@ -210,13 +208,11 @@
             
             UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@%@ in savings",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
             self.navigationItem.rightBarButtonItem = yenButton;
-            [yenButton release];
             
             //
             //  release the formatter
             //
             
-            [formatter release];
             
 
 			
@@ -224,7 +220,6 @@
 			
 			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"No savings"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
-			[yenButton release];
 		}
 
 		
@@ -249,19 +244,16 @@
             
             UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe %@%@",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
             self.navigationItem.rightBarButtonItem = yenButton;
-            [yenButton release];
             
             //
             //  release the formatter
             //
             
-            [formatter release];
             
         }else{
         
             UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:@"You owe nothing" style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
             self.navigationItem.rightBarButtonItem = yenButton;
-            [yenButton release];
             
         }
         
@@ -272,7 +264,7 @@
         //
         
         
-        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parentViewController action:@selector(dismissModalViewControllerAnimated:)] autorelease];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parentViewController action:@selector(dismissModalViewControllerAnimated:)];
     }
 	
 }
@@ -395,9 +387,7 @@
         
         UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You have %@%@",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
         self.navigationItem.rightBarButtonItem = yenButton;
-        [yenButton release];
 		
-        [formatter release];
         
 	}else if ([[self mode] isEqualToString:kModeBank]) {
 		
@@ -414,9 +404,7 @@
         
         UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@%@ in savings",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
         self.navigationItem.rightBarButtonItem = yenButton;
-        [yenButton release];
 		
-        [formatter release];
         
 	}else if ([[self mode] isEqualToString:kModeCreditUnion]) {
 		
@@ -440,14 +428,11 @@
             
             UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe %@%@",kYen,[formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]]] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
             self.navigationItem.rightBarButtonItem = yenButton;
-            [yenButton release];
             
-            [formatter release];
             
 		}else {
 			UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"You owe nothing"] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 			self.navigationItem.rightBarButtonItem = yenButton;
-			[yenButton release];
 		}
 
 		
@@ -823,9 +808,8 @@
 			
 			[tempCart setObject:[NSNumber numberWithInteger:[[kCart objectForKey:self.title] longLongValue] + [amountBox.text longLongValue]] forKey:[self title]];
 			
-			[kSettings setObject:[[tempCart copy] autorelease] forKey:@"cart"];
+			[kSettings setObject:[tempCart copy] forKey:@"cart"];
 			
-			[tempCart release];
 			
 			//
 			//	Add the sale to the "number of items bought" count
@@ -1007,7 +991,6 @@
 			
 			[kSettings setObject:tempCart forKey:@"cart"];
 			
-			[tempCart release];
 			
 			//
 			//	Add the cash to the player's wallet
@@ -1415,13 +1398,6 @@
 }
 
 
-- (void)dealloc {
-	[modeSelector release];
-	[mode release];
-	[amountBox release];
-    [infoLabel release];
-    [super dealloc];
-}
 
 
 @end

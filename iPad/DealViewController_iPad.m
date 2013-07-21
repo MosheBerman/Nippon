@@ -40,7 +40,6 @@
 	
     NSArray *tempItems = [[NSArray alloc] initWithObjects:kItemsNagiri, kItemsMaki, kItemsOshi, kItemsInari, kItemsSashimi, kItemsChirashi, kItemsNare, kItemsSushizushi, nil];
 	[self setItems:tempItems];
-	[tempItems release];
 	
 	//
 	//	Create an array of prices
@@ -48,7 +47,6 @@
 	
 	NSArray *tempPrices = [[NSArray alloc] initWithObjects:kPriceOfNagiri, kPriceOfMaki, kPriceOfOshi, kPriceOfInari, kPriceOfSashimi, kPriceOfChirashi, kPriceOfNare, kPriceOfSushizushi, nil];
 	[self setPrices: tempPrices];
-	[tempPrices release];
 	
 	//
 	//	Register for notifications to show the bank
@@ -70,7 +68,6 @@
 	
 	UIBarButtonItem *closeButton  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self.parentViewController action:@selector(dismissModalViewControllerAnimated:)];
 	self.navigationItem.leftBarButtonItem = closeButton;
-	[closeButton release];
 	
 }
 
@@ -109,7 +106,6 @@
     //  Release the formatter
     //
     
-    [formatter release];
     
     //
     //  Assign the button
@@ -121,7 +117,6 @@
     //  Release the yen button
     //
     
-    [yenButton release];
 	
 	//
 	//	Register for a notification which is fired when random events complete
@@ -163,8 +158,6 @@
 		//	Release the bar button items
 		//
 		
-		[bankButton release];
-		[flexibleSpaceButtonItem release];
 		
 	}else if ([self.title isEqualToString:@"Osaka"]) {
 		
@@ -194,8 +187,6 @@
 		//	Release the bar button items
 		//
 		
-		[creditUnionButton release];
-		[flexibleSpaceButtonItem release];
 	}
 
 	
@@ -216,7 +207,6 @@
 	
 	UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ %@%@", NSLocalizedString(@"You have", @""), kYen, kCash] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 	self.navigationItem.rightBarButtonItem = yenButton;
-	[yenButton release];
 	
 	
 }
@@ -252,7 +242,6 @@
 	
 	FinancialViewController_iPad *bankView = [[FinancialViewController_iPad alloc] initWithMode:kModeBank andItem:NSLocalizedString(@"Bank",@"") atPrice:nil];
 	[self.navigationController pushViewController:bankView animated:YES];
-	[bankView release];
 	
 }
 
@@ -268,7 +257,6 @@
 	
 	FinancialViewController_iPad *bankView = [[FinancialViewController_iPad alloc] initWithMode:kModeCreditUnion andItem:NSLocalizedString(@"Credit Union", @"") atPrice:nil];
 	[self.navigationController pushViewController:bankView animated:YES];
-	[bankView release];	
 }
 
 #pragma mark -
@@ -293,7 +281,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
 	//
@@ -326,7 +314,6 @@
     //
     //
     
-    [formatter release];
     
 	//
 	//	Set the selection type
@@ -399,7 +386,6 @@
 	
 	[self.navigationController pushViewController:financeView animated:YES];
 	
-	[financeView release]; 
 }
 
 
@@ -439,11 +425,6 @@
 }
 
 
-- (void)dealloc {
-	[prices release];
-	[items release];
-    [super dealloc];
-}
 
 
 @end

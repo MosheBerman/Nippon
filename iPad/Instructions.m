@@ -21,11 +21,6 @@
 }
  */
 
-- (void)dealloc{
-	[scroller release];
-	[pageControl release];    
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning{
     // Releases the view if it doesn't have a superview.
@@ -73,7 +68,6 @@
 	
 	UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:[[UIApplication sharedApplication] delegate] action:@selector(hideInstructions)];
 	self.navigationItem.leftBarButtonItem = closeButton;
-	[closeButton release];
 	
 	//
 	//	Set the title
@@ -147,7 +141,6 @@
 		[scroller addSubview:previousSlide];
 		
 		//release the image from memory
-		[previousSlide release];
 		
 	}
 	
@@ -166,7 +159,6 @@
 	[scroller addSubview:currSlide];
 	
 	//release the image from memory
-	[currSlide release];
 	
 	
 	if(offset < kNumberOfSlides-1){
@@ -186,7 +178,6 @@
 		[scroller addSubview:nextSlide];
 		
 		//release the image from memory
-		[nextSlide release];
 	}
 	
 	

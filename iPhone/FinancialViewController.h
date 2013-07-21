@@ -42,11 +42,11 @@
 	
 }
 
-@property(nonatomic, retain) NSString *mode;
+@property(nonatomic, strong) NSString *mode;
 @property NSInteger price;
-@property (nonatomic, retain) UITextField *amountBox;
-@property (nonatomic, retain) UISegmentedControl *modeSelector;
-@property (retain, nonatomic) IBOutlet UILabel *infoLabel;
+@property (nonatomic, strong) UITextField *amountBox;
+@property (nonatomic, strong) UISegmentedControl *modeSelector;
+@property (strong, nonatomic) IBOutlet UILabel *infoLabel;
 
 //
 //	Initialize the financial view and pass a mode, item and price

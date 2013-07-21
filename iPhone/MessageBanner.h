@@ -15,8 +15,8 @@
     NSString *message;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *messageLabel;
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, strong) IBOutlet UILabel *messageLabel;
+@property (nonatomic, strong) NSString *message;
 
 //
 //  Initialize the view

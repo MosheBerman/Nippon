@@ -103,14 +103,12 @@
         [navController.navigationBar setTintColor:[UIColor blackColor]];
         
         //release the score changer
-        [scoreChanger release];
         
         [navController setModalPresentationStyle:UIModalPresentationFormSheet];
         
         //
         [self presentViewController:navController animated:YES completion:nil];
         
-        [navController release];
         //NSLog(@"Secret button pressed. devMode count is at %i", devModeCount);
         
         //
@@ -261,7 +259,6 @@
         
         [self setLocationView:pinView];
         //[self.view addSubview:self.locationView];
-        [pinView release];
     }
     
     [UIView beginAnimations:@"" context:@""];
@@ -301,7 +298,6 @@
 	//
 	//
 	
-	[dealView release];
 	
 	//
 	//
@@ -319,7 +315,6 @@
 	//
 	//
 	
-	[navController release];
 }
 
 - (void) generateRandomEvents{
@@ -375,7 +370,6 @@
 												  otherButtonTitles:nil];
 			[alert addButtonWithTitle:kButtonTitleShare];
 			[alert show];
-			[alert release];
 			
 		}else {
 			
@@ -391,7 +385,6 @@
 												  cancelButtonTitle:kButtonTitleRun
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 		}
 		
 	}else{
@@ -434,7 +427,6 @@
 														  otherButtonTitles:nil];
 					[alert addButtonWithTitle:kButtonTitleYes];
 					[alert show];
-					[alert release];
 					
 				}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventFoundAFew]) {
 					
@@ -494,7 +486,6 @@
 							
 							[kSettings setObject:tempCart forKey:@"cart"];
 							
-							[tempCart release];
 							
 							//
 							//	Inform the player that they found a few items
@@ -506,7 +497,6 @@
 																  cancelButtonTitle:NSLocalizedString(@"Okay, great!", @"")
 																  otherButtonTitles:nil];
 							[alert show];
-							[alert release];
 							
 						}else if ((numberOfItemsOnYou - howManyWereFound) < [kMaxCart integerValue]) {
 							
@@ -538,7 +528,6 @@
 									
 									[kSettings setObject:tempCart forKey:@"cart"];
 									
-									[tempCart release];
 								}
 							}
 							
@@ -548,7 +537,6 @@
 																  cancelButtonTitle:NSLocalizedString(@"Okay, great!", @"")
 																  otherButtonTitles:nil];
 							[alert show];
-							[alert release];
 							
 							
 						}else{
@@ -564,7 +552,6 @@
 																  cancelButtonTitle:NSLocalizedString(@"Okay...", @"")
 																  otherButtonTitles:nil];
 							[alert show];
-							[alert release];
 							
 						}
 						
@@ -620,7 +607,6 @@
 															  cancelButtonTitle:NSLocalizedString(@"Okay", @"")
 															  otherButtonTitles:nil];
 						[alert show];
-						[alert release];
 						
 						i++;	//Prices can't skyrocket and bottom out at the same time, so skip the next iteration
 						
@@ -673,7 +659,6 @@
 															  cancelButtonTitle:NSLocalizedString(@"Okay", @"")
 															  otherButtonTitles:nil];
 						[alert show];		
-						[alert release];
 						
 					}
 					
@@ -711,7 +696,6 @@
 														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsNare] integerValue]/3)*2], kItemsNare,
 														 [NSNumber numberWithInteger:([[kCart objectForKey:kItemsSushizushi] integerValue]/3)*2], kItemsSushizushi, nil];
 						[kSettings setObject:tempCart forKey:@"cart"];
-						[tempCart release];
 						
 						//
 						//	Increment the "Funazushi" count
@@ -736,7 +720,6 @@
 															  cancelButtonTitle:NSLocalizedString(@"Oh no!", @"")
 															  otherButtonTitles:nil];
 						[alert show];
-						[alert release];
 					}
 				}
 			}
@@ -757,8 +740,6 @@
 	}
 	
 	
-	[arrayOfProbabilities release];
-	[arrayOfEvents release];	
 }
 
 #pragma mark -
@@ -843,7 +824,6 @@
 													  cancelButtonTitle:NSLocalizedString(@"Okay...", @"") 
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 			}
 		}
 		
@@ -893,7 +873,6 @@
 												  cancelButtonTitle:NSLocalizedString(@"Great!", @"An expression of hapiness")
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 		}else {
 			
@@ -933,7 +912,6 @@
 														  otherButtonTitles:nil];
 					[alert addButtonWithTitle:kButtonTitleShare];
 					[alert show];
-					[alert release];
 					
 				}else {
 					
@@ -949,7 +927,6 @@
 														  cancelButtonTitle:kButtonTitleRun
 														  otherButtonTitles:nil];
 					[alert show];
-					[alert release];
 				}
 				
 			}else{
@@ -964,7 +941,6 @@
 													  cancelButtonTitle:NSLocalizedString(@"Okay...", @"")
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 				//
 				//	Cut the players cash in half
@@ -1009,7 +985,6 @@
 												  cancelButtonTitle:NSLocalizedString(@"It could have been worse.", @"")
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			//
 			// Remove half of the users sushi
@@ -1025,7 +1000,6 @@
 											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Nare"] integerValue]/2], @"Nare",
 											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Sushizushi"] integerValue]/2], @"Sushizushi", nil];
 			[kSettings setObject:tempCart forKey:@"cart"];
-			[tempCart release];
 			
 			//
 			//	Write the changes to disk
@@ -1132,22 +1106,6 @@
 }
 
 
-- (void)dealloc {
-	
-	[timeLabelPortrait release];
-	[timeLabelLandscape release];
-	
-	[locationLabelPortrait release];
-	[locationLabelLandscape release];
-	
-    [locationView release];
-    
-	[landscapeView release];
-	[portraitView release];
-	[informationButton release];
-	[popover release];
-    [super dealloc];
-}
 
 
 @end

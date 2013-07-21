@@ -65,7 +65,7 @@
 	//
 	
 	if (kTempScores == nil) {
-		[kSettings setObject:[[[NSMutableArray alloc] init] autorelease] forKey:@"tempScores"];
+		[kSettings setObject:[[NSMutableArray alloc] init] forKey:@"tempScores"];
 	}
     
     //
@@ -106,7 +106,6 @@
     }
     
 	[self setMainMenu:menuView];
-	[menuView release];
 	
 	self.window.rootViewController = menuView;
     
@@ -133,7 +132,7 @@
 		//	Initialize the acheivements dictionary
 		//
 		
-		achievementsDictionary = [[tempAchievements mutableCopy] autorelease];
+		achievementsDictionary = [tempAchievements mutableCopy];
 		tempScores = [[NSMutableArray alloc] init];
 		
 		//
@@ -250,7 +249,6 @@
 	
 	[kSettings setObject:self.tempScores forKey:@"tempScores"];
 	
-	[tempScores release];
     
 	[kSettings synchronize];    
 }
@@ -324,7 +322,6 @@
     
 	[kSettings setObject:tempCart forKey:@"cart"];
 	
-    [tempCart release];
 	
 	//
 	//	Reset the "no nori" achievement flag
@@ -451,7 +448,6 @@
 											  otherButtonTitles:nil];
 		[alert addButtonWithTitle:NSLocalizedString(@"Yes", @"yes")];
 		[alert show];
-		[alert release];
 		
 	}else{
 		
@@ -499,7 +495,6 @@
 											  cancelButtonTitle:NSLocalizedString(@"Back to Menu", "close the alert and return to the menu")
 											  otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 	}
 	
 }
@@ -541,7 +536,6 @@
         //	release the game view
         //
         
-        [game release];
         
         
     }else{
@@ -558,7 +552,6 @@
     //	Release the travel view
     //
     
-    [travelView release];
 
 }
 
@@ -591,7 +584,6 @@
     //  Release the instructions view
     //
     
-	[instructions release];
     
     //
     //  Present the modal view
@@ -603,7 +595,6 @@
     //  Release the navigation controller
     //
     
-	[navigationController release];
 	
 }
 
@@ -662,7 +653,6 @@
 	NSString *message = [NSString stringWithFormat: @"%@: %@\n%@: %li/%@\n%@: ¥%@\n%@: ¥%@\n%@: ¥%@", NSLocalizedString(@"Days Left", @"how much time remains") ,kDaysLeft, NSLocalizedString(@"Cart", @"how many items the user has and how many they can carry at once"), (long)numberOfItems, kMaxCart, NSLocalizedString(@"Cash", @"how much money the player has"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kCash longLongValue]]], NSLocalizedString(@"Debt", @"how much the user owes the credit union"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kDebt longLongValue]]], NSLocalizedString(@"Savings", @"how much the user has saved up"), [formatter stringFromNumber:[NSNumber numberWithLongLong:[kSavings longLongValue]]]];
 	
     //Release the formatter
-    [formatter release];
     
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Information", @"The title for the information window")
 													message:message
@@ -670,7 +660,6 @@
 										  cancelButtonTitle:NSLocalizedString(@"Okay", @"")
 										  otherButtonTitles:nil];
 	[alert show];
-	[alert release];
 }
 
 
@@ -708,7 +697,6 @@
                                                              destructiveButtonTitle:nil
                                                                   otherButtonTitles:kLeaderBoardsButtonTitle, kAchievementsButtonTitle, nil];
         [gameCenterActionSheet showInView:self.mainMenu.view];
-        [gameCenterActionSheet release];
         
 	}else {
 		
@@ -718,12 +706,10 @@
 		
 		HighScoresViewController *scoresView = [[HighScoresViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:scoresView];
-		[scoresView release];
 		
 		[navigationController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 		
 		[self.mainMenu presentViewController:navigationController animated:YES completion:nil];
-		[navigationController release];
 	}
     
 	
@@ -922,9 +908,7 @@
                 
                 NSString *formattedNumber = [formatter stringFromNumber:scoreAsNumber];
                 
-                [scoreAsNumber release];
                 
-                [formatter release];
                 
                 //
 				//
@@ -939,7 +923,6 @@
                                                       otherButtonTitles:nil];
                 
 				[alert show];
-				[alert release];
                 
 				//
 				//	Check for the "No Nori" achievement
@@ -982,7 +965,6 @@
                 //  Release the formatter
                 //
                 
-                [formatter release];
                 
                 //
                 //  Inform the user that their score will be posted to Game Center in the future
@@ -994,7 +976,6 @@
                                                       cancelButtonTitle:NSLocalizedString(@"Okay", @"an okay button")
                                                       otherButtonTitles:nil];
 				[alert show];
-				[alert release];
                 
                 
                 
@@ -1008,7 +989,6 @@
 				
 				[kSettings setObject:tempArray forKey:@"tempScores"];
 				
-				[tempArray release];
 				
 				//NSLog(@"Temp Scores: %@", [kTempScores description]);
 			}
@@ -1027,7 +1007,6 @@
                                                  cancelButtonTitle:@"I know."
                                                  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
             //
             //  Report the achievement
@@ -1046,7 +1025,6 @@
                                                   cancelButtonTitle:NSLocalizedString(@"Okay", @"an okay button")
                                                   otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 		}
 		
@@ -1066,7 +1044,6 @@
                                                   cancelButtonTitle:NSLocalizedString(@"Okay", @"an okay button")
                                                   otherButtonTitles:nil];
 			[alert show];
-			[alert release];
             
 			//
 			//	Store the score
@@ -1081,7 +1058,6 @@
             
 			self.tempScores = tempArray;
 			
-			[tempArray release];
 			
 			//
 			//	Write the changes to the disk
@@ -1103,7 +1079,6 @@
                                                  cancelButtonTitle:@"I know."
                                                  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			
 		}else{
@@ -1114,7 +1089,6 @@
                                                   cancelButtonTitle:NSLocalizedString(@"Okay", @"an okay button")
                                                   otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 		}
 	}		
 }
@@ -1247,7 +1221,7 @@ BOOL isGameCenterAvailable(){
 //
 
 - (void) reportScore: (int64_t) score forCategory: (NSString*) category{
-	GKScore *scoreReporter = [[[GKScore alloc] initWithCategory:category] autorelease];
+	GKScore *scoreReporter = [[GKScore alloc] initWithCategory:category];
 	scoreReporter.value = score;
 	
 	[scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
@@ -1270,7 +1244,7 @@ BOOL isGameCenterAvailable(){
 //
 
 - (void) showLeaderboard{
-	GKLeaderboardViewController *leaderboardController = [[[GKLeaderboardViewController alloc] init] autorelease];
+	GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
 	if (leaderboardController != nil){
 		leaderboardController.leaderboardDelegate = self.mainMenu;
 		[self.mainMenu presentViewController:leaderboardController animated:YES completion:nil];
@@ -1282,7 +1256,7 @@ BOOL isGameCenterAvailable(){
 //
 
 - (void) showAchievements{
-	GKAchievementViewController *achivementController = [[[GKAchievementViewController alloc] init] autorelease];
+	GKAchievementViewController *achivementController = [[GKAchievementViewController alloc] init];
 	if (achivementController != nil){
 		achivementController.achievementDelegate = self.mainMenu;
 		[self.mainMenu presentViewController:achivementController animated:YES completion:nil];
@@ -1296,10 +1270,10 @@ BOOL isGameCenterAvailable(){
 - (GKAchievement*) achievementForIdentifier: (NSString*) identifier{
     GKAchievement *achievement = [achievementsDictionary objectForKey:identifier];
     if (achievement == nil){
-        achievement = [[[GKAchievement alloc] initWithIdentifier:identifier] autorelease];
+        achievement = [[GKAchievement alloc] initWithIdentifier:identifier];
         [achievementsDictionary setObject:achievement forKey:achievement.identifier];
     }
-    return [[achievement retain] autorelease];
+    return achievement;
 }
 
 //
@@ -1485,17 +1459,9 @@ BOOL isGameCenterAvailable(){
     
     [UIView commitAnimations];
     
-    [alert release];
     
 }
 
-- (void)dealloc {
-	[tempAchievements release];
-	[tempScores release];
-	[mainMenu release];
-	[window release];
-	[super dealloc];
-}
 
 - (void)configureSpiffy
 {

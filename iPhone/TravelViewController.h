@@ -14,7 +14,7 @@
 	NSArray *locations;
 }
 
-@property (nonatomic, retain) NSArray *locations;
+@property (nonatomic, strong) NSArray *locations;
 
 - (void) generateRandomEvents;
 

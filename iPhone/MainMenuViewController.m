@@ -47,11 +47,9 @@
         [navController.navigationBar setTintColor:[UIColor blackColor]];
         
         //release the score changer
-        [scoreChanger release];
         
         [self presentViewController:navController animated:YES completion:nil];
 				
-        [navController release];
         //NSLog(@"Secret button pressed. devMode count is at %i", devModeCount);
         
         //
@@ -229,7 +227,6 @@
                                               cancelButtonTitle:NSLocalizedString(@"OK",@"")
                                               otherButtonTitles: nil];
         [alert show];
-        [alert release];
     }
     
     if([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]){
@@ -265,7 +262,6 @@
 }
 
 - (void)viewDidUnload {
-    [continueButton release];
     continueButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -273,10 +269,6 @@
 }
 
 
-- (void)dealloc {
-    [continueButton release];
-    [super dealloc];
-}
 
 
 @end

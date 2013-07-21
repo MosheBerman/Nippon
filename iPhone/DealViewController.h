@@ -23,8 +23,8 @@
 	NSArray *prices;
 }
 
-@property (nonatomic, retain) NSArray *items;
-@property (nonatomic, retain) NSArray *prices;
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *prices;
 
 
 //

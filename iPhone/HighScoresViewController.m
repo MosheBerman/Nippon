@@ -29,7 +29,7 @@
 				//	Sort the scores
 				//
 				
-				NSArray *descriptors = [NSArray arrayWithObject:[[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]autorelease]];
+				NSArray *descriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc]initWithKey:@"integerValue" ascending:NO]];
 				
 				if (kTempScores != nil && [kTempScores count] > 1){
 						self.highScores = [kTempScores sortedArrayUsingDescriptors:descriptors];
@@ -54,7 +54,6 @@
 		
 		UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSelf)];
 		self.navigationItem.leftBarButtonItem = doneButton;
-		[doneButton release];
 		
 		//
 		//	Set the title of the high scores
@@ -130,7 +129,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 		
 		//
@@ -248,10 +247,6 @@
 }
 
 
-- (void)dealloc {
-		[highScores release];
-    [super dealloc];
-}
 
 
 @end

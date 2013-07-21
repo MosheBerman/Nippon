@@ -106,7 +106,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
 	//
@@ -218,7 +218,6 @@
 			
 			HowToPlayViewController *helpView = [[HowToPlayViewController alloc] initWithNibName:@"HowToPlayViewController" bundle:nil];
 			[self.navigationController pushViewController:helpView animated:YES];
-			[helpView release];
 		}
 		
 	}
@@ -243,9 +242,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

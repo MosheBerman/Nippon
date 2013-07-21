@@ -200,13 +200,7 @@
     
 }
 
-- (void)dealloc {
-    [continueButton release];
-    [buttonWrapperView release];
-    [super dealloc];
-}
 - (void)viewDidUnload {
-    [continueButton release];
     continueButton = nil;
     [self setButtonWrapperView:nil];
     [super viewDidUnload];
@@ -232,7 +226,6 @@
                                               cancelButtonTitle:NSLocalizedString(@"OK",@"") 
                                               otherButtonTitles: nil];
         [alert show];
-        [alert release];
     }
     
     if([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]){

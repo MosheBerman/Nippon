@@ -25,7 +25,7 @@
 	
 	
 }
-@property (retain, nonatomic) IBOutlet UIView *buttonWrapperView;
+@property (strong, nonatomic) IBOutlet UIView *buttonWrapperView;
 
 //
 //	Dispatch a "New Game" notification to any Observers

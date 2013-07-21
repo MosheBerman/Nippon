@@ -43,7 +43,6 @@
 	
 	UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Main Menu", @"") style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(hideGameView)];
 	self.navigationItem.leftBarButtonItem = menuButton;
-	[menuButton release];
 	
 	//
 	//	Set the title of the view
@@ -53,7 +52,6 @@
 	
 	NSArray *tempLocations = [[NSArray alloc] initWithObjects: @"Sapporo", @"Tohoku", @"Tokyo", @"Chubu", @"Osaka", @"Chugoku", @"Shikoku", @"Kyushu", nil];
 	self.locations = tempLocations;
-	[tempLocations release];
 }
 
 
@@ -67,7 +65,6 @@
 	
 	UIBarButtonItem *yenButton = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ %@", kDaysLeft, NSLocalizedString(@"Days Left", @"")] style:UIBarButtonItemStyleBordered target:[[UIApplication sharedApplication] delegate] action:@selector(showInGameInfo)];
 	self.navigationItem.rightBarButtonItem = yenButton;
-	[yenButton release];
 }
 
 
@@ -118,7 +115,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
      
 	//
@@ -288,7 +285,6 @@
 	//	Release the Deal View
 	//
 	
-	[dealView release];	
 }
 
 #pragma mark -
@@ -342,7 +338,6 @@
 													  otherButtonTitles:nil];
 				[alert addButtonWithTitle:kButtonTitleShare];
 				[alert show];
-				[alert release];
 				
 			}else {
 				
@@ -358,7 +353,6 @@
 													  cancelButtonTitle:kButtonTitleRun
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
                 
 			}
 
@@ -402,7 +396,6 @@
 														  otherButtonTitles:nil];
 						[alert addButtonWithTitle:kButtonTitleYes];
 						[alert show];
-						[alert release];
 				
 					}else if ([[arrayOfEvents objectAtIndex:i] isEqualToString:kRandomEventFoundAFew]) {
 				
@@ -462,7 +455,6 @@
 				
 								[kSettings setObject:tempCart forKey:@"cart"];
 							
-								[tempCart release];
 			
 								//
 								//	Inform the player that they found a few items
@@ -508,7 +500,6 @@
 									
 										[kSettings setObject:tempCart forKey:@"cart"];
 									
-										[tempCart release];
 									}
 								}
 								                       
@@ -661,7 +652,6 @@
                             }
                             
 							[kSettings setObject:tempCart forKey:@"cart"];
-							[tempCart release];                            
                             
 							//
 							//	Increment the "Funazushi" count
@@ -702,8 +692,6 @@
 	}
 	
 	
-	[arrayOfProbabilities release];
-	[arrayOfEvents release];	
 }
 
 
@@ -799,7 +787,6 @@
 												  cancelButtonTitle:NSLocalizedString(@"Great!", @"An expression of hapiness")
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 		}else {
 			
@@ -839,7 +826,6 @@
 														  otherButtonTitles:nil];
 					[alert addButtonWithTitle:kButtonTitleShare];
 					[alert show];
-					[alert release];
 					
 				}else {
 					
@@ -855,7 +841,6 @@
 														  cancelButtonTitle:kButtonTitleRun
 														  otherButtonTitles:nil];
 					[alert show];
-					[alert release];
 				}
 				
 			}else{
@@ -870,7 +855,6 @@
 													  cancelButtonTitle:NSLocalizedString(@"Okay...", @"")
 													  otherButtonTitles:nil];
 				[alert show];
-				[alert release];
 				
 				//
 				//	Cut the players cash in half
@@ -915,7 +899,6 @@
 												cancelButtonTitle:NSLocalizedString(@"It could have been worse.", @"")
 												otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 		
 			//
 			// Remove half of the users sushi
@@ -931,7 +914,6 @@
 											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Nare"] integerValue]/2], @"Nare",
 											 [NSNumber numberWithInteger:[[kCart objectForKey:@"Sushizushi"] integerValue]/2], @"Sushizushi", nil];
 			[kSettings setObject:tempCart forKey:@"cart"];
-			[tempCart release];
 		
 			//
 			//	Write the changes to disk
@@ -974,10 +956,6 @@
 }
 
 
-- (void)dealloc {
-	[locations release];
-    [super dealloc];
-}
 
 
 @end

@@ -50,13 +50,13 @@
 }
 
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) MainMenuViewController *mainMenu;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) MainMenuViewController *mainMenu;
 
-@property (nonatomic, retain) NSMutableDictionary *tempAchievements;
-@property (nonatomic, retain) NSMutableArray *tempScores;
+@property (nonatomic, strong) NSMutableDictionary *tempAchievements;
+@property (nonatomic, strong) NSMutableArray *tempScores;
 
-@property(nonatomic, retain) NSMutableDictionary *achievementsDictionary;
+@property(nonatomic, strong) NSMutableDictionary *achievementsDictionary;
 
 
 //

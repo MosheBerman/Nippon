@@ -174,7 +174,6 @@
                     
                     [UIView commitAnimations];
                     
-                    [alert release];
                     
                 }
             }
